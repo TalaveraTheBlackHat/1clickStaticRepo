@@ -1,0 +1,530 @@
+@import url('https://fonts.googleapis.com/css?family=PT+Sans:400,700');
+
+.row{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+.section{
+    background-color: none;
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+main{
+    flex: 1;
+    padding: 0 48px;
+    @media (max-width: 440px){
+        padding: 0 24px;
+    }
+}
+
+form{ 
+    margin-top: 40px;
+    height: 100%;
+}
+.label{
+    color: #000;
+    font-size: 16px;
+}
+small{
+    display: none;
+    &.errorOnce{
+        margin-top: 2px;
+    }
+}
+.form-item{
+    input[type="text"],
+    input[type="number"],
+    input[type="email"]{
+        display: block;
+        align-items: center;
+        color: #000;
+        font-size: 16px;
+        width: 100%;
+        background-color: #fff;
+        border: none;
+        border-bottom: 1px solid #75759E;
+        padding: 8px 0;
+        appearance: none;
+        outline: none;
+    }
+    /* small{
+        letter-spacing: 1px;
+    } */
+    i{
+        font-size: 12px;
+        color: red;
+    }
+    
+}
+.box-item{
+    float: left;
+    width: auto;
+    height: 60px;
+    margin-left: 16px;
+    margin-bottom: 30px;
+}
+.form-item-botones{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 300px 350px;
+
+}
+
+
+
+.tablaPedidos{
+    position: relative;
+    margin-top: 10px;
+    color: #000;
+}
+
+.separadorTablasHead {
+    border-bottom: 2px solid #000 !important;
+}
+.separadorTablas {
+    border-bottom: 1px solid #f26d43 !important;
+}
+
+td{
+    font-size: 15px;
+    font-weight: bold;
+}
+
+::placeholder{
+  color: #000;
+}
+.entradaFormularios{
+    width: 400px !important;
+    text-align: center;
+    color: #000;
+}
+.direccion{
+    width: 400px !important;
+    color: #000;
+    text-align: center;
+}
+
+.selectEstado{
+    position: absolute;    
+    display: flex;
+    margin-top: 17px;
+    width: 400px;
+    padding: 5px;
+    background-color: transparent;
+    color: #000;
+    border: .8px solid #a5a4a4;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    height: 3.05rem;
+}
+
+.selectMunicipio{
+    position: relative;
+    margin-left: 400px;
+    color: #000;
+}
+
+.notaPedido{
+    position: relative;
+    text-align: center;
+    left: 400px;
+    min-width: 400px;
+    width: 400px;
+    max-width: 400px;
+    min-height: 80px;
+    height: 80px;
+    max-height: 80px;
+    margin: 0 auto 0 20px;
+    color: #000;
+    top: 20px;
+    box-shadow: 0px 0px 5px rgb(22, 22, 22);
+    
+}
+
+option{
+    color: #000;
+    /* background-color: #191919; */
+}
+
+.submit{
+    position: relative;
+    display: block;
+    align-items: center;
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    padding: 8px 48px;
+    margin-top: -300px;
+    border: 2px solid #75759E;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all ease .2s;
+    &:hover{
+        background-color: #EDA261;
+        border: 2px solid #EDA261;
+    }
+}
+
+.botonNotiPedi{
+    display: inline-block;
+    align-items: center;
+    font-size: 14px;
+    font-weight: 700;
+    color: #000 !important;
+    text-align: center;
+    letter-spacing: 1px;
+    padding: 2px 30px;
+    margin-top: 0px;
+    border: 2px solid #75759E;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all ease .2s;
+    &:hover{
+        background-color: #EDA261;
+        border: 2px solid #EDA261;
+    }
+}
+
+.labelNota{
+    margin-top: 90px;
+    margin-left: -70px;
+    font-size: 14px;
+    color: #000;
+}
+
+.divObservacion{
+    position: absolute;
+    top: 650px !important;
+    left: 270px;
+    text-align: justify;
+    max-width: 800px;
+    background-color: rgba(0, 0, 0, 0.541)232;
+    display: block;
+}
+.labelObservacion{   
+    font-weight: bold;
+    display: flex;
+    float: left;
+    color: #000;
+}
+
+.divObservacionPago{
+    position: absolute;
+    top: 950px !important;
+    left: 270px;
+    text-align: justify;
+    max-width: 800px;
+    background-color: rgba(0, 0, 0, 0.541)232;
+    display: block;
+}
+.labelObservacionPago{   
+    font-weight: bold;
+    display: flex;
+    float: left;
+    color: #000;
+}
+
+.observacionText{
+    display: block;
+    margin-bottom: 10px;
+}
+/****FERRETERIA PRINCIPAL****/
+
+/*Variables*/
+:root{
+    --anchoPantalla: 1349px;
+    --largoPantalla: 1200px;
+}
+
+
+.vistaPrincipalMiCuenta{
+    position: relative;
+    width: var(--anchoPantalla);
+    margin-top: 0px;
+    height: var(--largoPantalla);
+    display: flex;
+    justify-content: center;
+    background-color: #000;
+    margin: 0 auto;
+   margin-bottom: -70px;
+
+}
+.contenedorMiCuenta{
+    position: relative;
+    margin-top: 0px;
+    width: var(--anchoPantalla);
+    height: var(--largoPantalla);
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+
+
+
+.main {
+   position: relative;
+   display: flex;
+   justify-content: center;
+   width: var(--anchoPantalla);
+   height: var(--largoPantalla);
+   background-color: #4e4e4e;
+  }
+
+  .profile {
+   position: relative;
+   min-height: 180px;
+   max-height: 180px;
+   z-index: 1;
+    
+  }
+
+  .profile-menu {
+   position: absolute;
+   display: flex;
+   justify-content: center;
+  /*padding-left: 300px;*/
+   bottom: 0;
+   background: #191919;
+   width: var(--anchoPantalla);
+   border-radius: 0 0 4px 4px;
+  }
+
+  .profile-menu-link {
+   padding: 20px 16px;
+   color: #fff !important;
+   transition: 0.3s;
+   cursor: pointer;
+   &.active,
+   &:hover {
+    color: #000;
+    background-color: #f26d43;
+    border-bottom: 3px solid #000f;
+    cursor: pointer;
+   }
+  }
+
+  .profile-avatar {
+   min-width: 500px;
+   max-height: 150px;
+   position: absolute;
+   align-items: center;
+   display: flex;
+   z-index: 1;
+   bottom: 0px;
+   left: 24px;
+  }
+
+  .profile-img {
+   width: 150px;
+   height: 150px;
+   border-radius: 50%;
+   object-fit: cover;
+   border: 3px solid #000;
+   float: left;
+  }
+
+  .profile-name {
+   margin-left: 24px;
+   margin-bottom: 24px;
+   min-width: 200px;
+   font-size: 22px;
+   color: #000;
+   font-weight: 600;
+   font-family: "DM Sans", sans-serif;
+   
+  }
+
+  .cajaMiCarrito{
+    position: absolute;
+    top: 100%;
+    width: var(--anchoPantalla); 
+    height: 1200px; 
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+  }
+  .cajaMiCompra{
+    display: none;
+  }
+  .cajaMiPago{
+    display: none;
+  }
+/* @media screen and (max-width: 700px) {
+   .profile-avatar {
+    top: -25px;
+    left: 50%;
+    transform: translatex(-50%);
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+   }
+   .profile-img {
+    height: 100px;
+    width: 100px;
+   }
+   .profile-name {
+    margin: 5px 0;
+   }
+   .profile-menu {
+    padding-left: 0;
+    width: 100%;
+    overflow: auto;
+    justify-content: center;
+   }
+   .profile-menu-link {
+    padding: 16px;
+    font-size: 15px;
+    color: #000;
+   }
+  }
+
+  @media screen and (max-width: 480px) {
+   .profile-menu-link:nth-last-child(1),
+   .profile-menu-link:nth-last-child(2) {
+    display: none;
+   }
+  }*/
+
+
+
+
+  .box-transferencia {
+    position: relative;
+    width: 500px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    float: left;
+    /*left: 20px;*/
+    margin-top: 15px;
+    right: -25px;
+    background-color: none;
+    margin: 0 50px;
+    box-shadow: 0px 0px 5px rgb(22, 22, 22);
+    }
+    
+    .minibox-transferencia {
+    --main-color: #000;
+    --submain-color: #78858F;
+    --bg-color: #fff;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    position: relative;
+    width: 500px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    float: left;
+    background: var(--bg-color);
+    }
+
+    .notaSubida{
+        top: 50px;
+        bottom: 0px;
+        position: relative;
+        display:flex;
+        left: 200px;
+        width:300px; 
+        height: 50px;
+        font-size: 18px;
+        font-weight: bold;
+        color: #000;
+        background-color: none;
+    }
+    .card_tituloT {
+    font-weight: 400;
+    font-size: 24px;
+    font-weight: bold;
+    padding-left: 10px;
+    padding-right: 10px;
+    text-align: center;
+    color:#000;
+    }
+    
+    .card_contenidoT {
+        font-weight: 500;
+        font-size: 14px;
+        color: var(--main-color);
+        padding-left: 10px;
+        padding-right: 10px;
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+
+.subirDocumentos{
+    width: 500px;
+    height: 300px;
+    background-color: none; 
+    margin: 30px 78px;
+    box-shadow: 0px 0px 5px rgb(22, 22, 22);
+    border-radius: 0;}
+.documentosCargados{
+    width: 500px;   
+    height: 265px;
+    border-radius: 0;
+}
+.notaDocumentos{
+    position: relative;
+    width: 500px;
+    height: 300px;
+    margin-top: -50px;
+    font-size: 18px;
+    text-align: center;
+    color: #000;
+    box-shadow: 0px 0px 5px rgb(22, 22, 22);
+    border: none;
+    overflow-y: auto;
+}
+.tituloDocumentos{
+    position: relative;
+    top: -6px;
+    left: 0px;
+    font-size: 18px;
+    font-weight: bold;
+    min-width: 400px;
+    width: 400px;
+    max-width: 400px;
+    min-height: 80px;
+    height: 80px;
+    max-height: 80px;
+    margin: 0 auto;
+    color: #000;
+}
+.listaDocumentos{
+    max-height: 265px;
+    font-size: 12px;
+    font-weight: bold;
+}
+.liDocumento{
+    height: 30px !important;
+
+    display: block;
+
+}
+.quitarDocumento{
+    margin-left: 50px;
+    background-color: none;
+    letter-spacing: 1px;
+    padding: 3px 3px;
+    border: 2px solid #75759E;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all ease .2s;
+    &:hover{
+        background-color: #EDA261;
+        border: 2px solid #EDA261;
+    }
+}
