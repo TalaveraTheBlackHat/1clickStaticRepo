@@ -1,0 +1,80 @@
+.card_profile {
+  display: none;
+  position: absolute;
+  width: 300px;
+  height: 280px;
+  top: 60px;
+  margin-right: 80px;
+  border-radius: 2em;
+  padding: 10px;
+  background-color: #191919;
+  box-shadow: 5px 5px 30px rgb(4, 4, 4),
+                   -5px -5px 30px rgb(57, 57, 57);
+}
+
+.profileimage {
+  background-color: transparent;
+  border: none;
+  margin-top: 20px;
+  border-radius: 5em;
+  width: 100px;
+  height: 100px;
+  cursor: pointer;
+}
+
+.pfp {
+  border-radius: 35em;
+  fill: #fff;
+  background-color: #191919;
+}
+
+.Name {
+  color: white;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  width: 200px;
+  height: 0px;
+  font-size: 14px;
+  margin-top: 10px;
+  border-radius: 0;
+}
+
+.socialdiv {
+  background-color: #191919;
+  border-radius: 3em;
+  width: 90%;
+  height: 60px;
+  /* padding: 14px; */
+  margin-top: 290px;
+  /* margin-top: 15px; */
+  color: white;
+  box-shadow: 3px 3px 15px rgb(0, 0, 0),
+                   -3px -3px 15px rgb(58, 58, 58);
+}
+
+.card a {
+  transition: 0.4s;
+  color: white
+}
+
+#instagram {
+  color: #ffffff;
+}
+
+#instagram:hover {
+  color: #d62976;
+}
+
+#facebook{
+  color: #ffffff;
+}
+
+#facebook:hover {
+  color: #3b5998;
+}
+
+#twitter {
+  color: #ffffff;
+}
+#twitter:hover {
+  color: #00acee;
+}
