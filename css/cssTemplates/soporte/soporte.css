@@ -1,0 +1,441 @@
+.preguntasFrecuentes{
+    background-color: #fff; 
+    position: relative;  
+    width: 1310px;
+    margin-bottom: 30px;
+    padding: 20px;
+}
+.contenedorContactos{
+    background-color: #fff; 
+    position: relative; 
+    left: 20px; 
+    width: 1310px;
+    margin-bottom: 30px;
+}
+.preguntasFrecuentesDetalladas{
+    background-color: #c4c4c4; 
+    width: 800px; 
+    height: 200px; 
+    display: none; 
+    box-shadow: 0px 0px 3px 1px rgb(22, 22, 22); 
+    margin-bottom: 10px; 
+    margin-top: 10px;
+    padding: 10px; 
+}
+.contactanos{
+    background-color: #ffffff; 
+    width: 800px; 
+    height: 300px; 
+    display: none;
+    margin: 0 auto;
+    align-items: center;
+    box-shadow: 0px 0px 2px 1px rgb(22, 22, 22); 
+    margin-bottom: 10px; 
+    margin-top: 50px;
+}
+.nosotros{
+    background-color: #ffffff; 
+    width: 1300px; 
+    height: 930px; 
+    padding: 10px;
+    display: none;
+    margin: 0 auto;
+    align-items: center;
+    box-shadow: 0px 0px 2px 1px rgb(22, 22, 22); 
+    margin-bottom: 10px; 
+}
+.tituloPreguntasFrecuentes{
+    font-size: 2.5rem !important;
+    margin-top: 40px;
+}
+.contenedorTituloPregutas{
+    position: relative; 
+    display: flex;
+    justify-content: center;
+    left: 20px; 
+    width: 1310px;
+    margin-bottom: 50px;
+}
+.contenedorTituloPregutasDetalladas{
+    font-size: 1.5rem; 
+    font-weight: bold;
+    margin-bottom: 100px;
+    color:#f26d43 !important;
+    cursor: pointer;
+}
+
+
+
+
+
+
+
+
+@import url('https://fonts.googleapis.com/css?family=PT+Sans:400,700');
+
+.row{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+.section{
+    background-color: none;
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+main{
+    flex: 1;
+    padding: 0 48px;
+    @media (max-width: 440px){
+        padding: 0 24px;
+    }
+}
+/* 
+form{
+    margin-top: 40px;
+    height: 100%;
+    display: flex;
+    align-items: center !important;
+    flex-direction: column;
+} */
+.label{
+    color: #fff;
+    font-size: 16px;
+}
+small{
+    display: none;
+    &.errorOnce{
+        margin-top: 2px;
+    }
+}
+.form-item{
+    input[type="text"],
+    input[type="number"],
+    input[type="email"]{
+        display: block;
+        color: #E2E3E8;
+        font-size: 16px;
+        width: 100%;
+        background-color: transparent;
+        border: none;
+        border-bottom: 1px solid #75759E;
+        padding: 8px 0;
+        appearance: none;
+        outline: none;
+    }
+    small{
+        /*letter-spacing: 1px;*/
+    }
+    i{
+        font-size: 12px;
+        color: red;
+    }
+}
+.box-item{
+    height: 60px;
+    margin-bottom: 16px;
+}
+.form-item-double{
+    display: flex;
+    .form-item{
+        flex: 1 1 auto;
+    }
+    .form-item:nth-child(1){
+        padding-right: 16px;
+    }
+    .form-item:nth-child(2){
+        padding-left: 16px;
+    }
+}
+.form-item-triple{
+    display: flex;
+    align-items: center;
+    padding-top: 6px;
+    .radio-label{
+        flex: 1 1 auto;
+        text-align: left;
+        label{
+            display: inline-block;
+            vertical-align: middle;
+        }
+    }
+    .form-item{
+        flex: 3 1 auto;
+        text-align: center;
+        margin: 0;
+        label,input[type="radio"]{
+            display: inline-block;
+            vertical-align: middle;
+            margin: 0 4px;
+        }
+    }
+}
+
+
+
+.tablaPedidos{
+    position: relative;
+    margin-top: 10px;
+    color: #fff;
+}
+
+.separadorTablasHead {
+    border-bottom: 2px solid #fff !important;
+}
+.separadorTablas {
+    border-bottom: 1px solid #f26d43 !important;
+}
+
+
+::placeholder{
+  color: #fff;
+}
+.entradaFormularios{
+    width: 400px !important;
+  text-align: center;
+  color: #fff;
+}
+.direccion{
+    width: 800px !important;
+}
+.submit{
+    display: inline-block;
+    align-items: center;
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    padding: 8px 48px;
+    margin-top: 50px;
+    border: 2px solid #75759E;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all ease .2s;
+    &:hover{
+        background-color: #EDA261;
+        border: 2px solid #EDA261;
+    }
+}
+.botonNotiPedi{
+    display: inline-block;
+    align-items: center;
+    font-size: 14px;
+    font-weight: 700;
+    text-align: center;
+    letter-spacing: 1px;
+    padding: 2px 30px;
+    margin-top: 0px;
+    border: 2px solid #75759E;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all ease .2s;
+    &:hover{
+        background-color: #EDA261;
+        border: 2px solid #EDA261;
+    }
+}
+
+
+
+/****FERRETERIA PRINCIPAL****/
+
+/*Variables*/
+:root{
+    --anchoPantalla: 1349px;
+    --largoPantalla: 1200px;
+}
+
+
+.vistaPrincipalMiCuenta{
+    position: relative;
+    width: var(--anchoPantalla);
+    margin-top: 0px;
+    height: var(--largoPantalla);
+    display: flex;
+    justify-content: center;
+    background-color: #fff;
+    margin: 0 auto;
+   margin-bottom: -70px;
+
+}
+.contenedorMiCuenta{
+    position: relative;
+    margin-top: 0px;
+    width: var(--anchoPantalla);
+    height: var(--largoPantalla);
+    display: flex;
+    justify-content: center;
+    background-color: #119;
+    margin: 0 auto;
+}
+
+
+
+
+.main {
+   position: relative;
+   display: flex;
+   width: var(--anchoPantalla);
+   height: var(--largoPantalla);
+   margin: 0 auto;
+   background-color: #4e4e4e;
+  }
+
+  .profile {
+   position: relative;
+   height: 65px;
+   z-index: 1;
+  }
+
+  .profile-menu {
+   position: relative;
+   display: flex;
+   justify-content: center;
+  /*padding-left: 300px;*/
+   bottom: 0;
+   background: #191919;
+   width: var(--anchoPantalla);
+   display: flex;
+   border-radius: 0 0 4px 4px;
+  }
+
+  .profile-menu-link {
+   padding: 20px 16px;
+   color: #fff !important;
+   transition: 0.3s;
+   cursor: pointer;
+   &.active,
+   &:hover {
+    color: #fff;
+    background-color: #f26d43;
+    border-bottom: 3px solid #000f;
+    cursor: pointer;
+   }
+  }
+
+  .profile-avatar {
+   position: absolute;
+   align-items: center;
+   display: flex;
+   z-index: 1;
+   bottom: 16px;
+   left: 24px;
+  }
+
+  .profile-img {
+   width: 150px;
+   height: 150px;
+   border-radius: 50%;
+   object-fit: cover;
+   border: 3px solid #fff;
+  }
+
+  .profile-name {
+   margin-left: 24px;
+   margin-bottom: 24px;
+   font-size: 22px;
+   color: #fff;
+   font-weight: 600;
+   font-family: "DM Sans", sans-serif;
+  }
+
+  .cajaMiCuenta{
+    position: absolute;
+    top: 100%;
+    width: var(--anchoPantalla); 
+    height: 850px; 
+    background-color: #07090ab9;
+    display: flex;
+    justify-content: center;
+  }
+  .cajaAyuda{
+    position: absolute;
+    top: 100%;
+    width: var(--anchoPantalla); 
+    height: 850px; 
+    background-color: #07090ab9;
+    display: block;
+    justify-content: center;
+  }
+  .cajaContactos{
+    position: absolute;
+    top: 100%;
+    width: var(--anchoPantalla); 
+    height: 850px; 
+    background-color: #07090ab9;
+    display: none;
+    justify-content: center;
+  }
+  .cajaNosotros{
+    position: absolute;
+    top: 100%;
+    width: var(--anchoPantalla); 
+    height: 850px; 
+    background-color: #07090ab9;
+    display: none;
+    justify-content: center;
+  }
+  .tablaDetallesPedido{
+    position: relative;
+    margin-top: 10px !important;
+    color: #000; 
+}
+
+.boton_cerrar_detalles{
+    color: black; 
+    font-size: 1rem; 
+    position: absolute; 
+    margin-top: -720px; 
+    margin-left: 1100px; 
+    border: solid 1px; 
+    box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.75);
+    cursor: pointer;
+}
+.contenedorTablaLista{
+    margin-top: 20px;
+    max-height: 750px; 
+    width: 100%; 
+    overflow-y: auto;
+}
+/* @media screen and (max-width: 700px) {
+   .profile-avatar {
+    top: -25px;
+    left: 50%;
+    transform: translatex(-50%);
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+   }
+   .profile-img {
+    height: 100px;
+    width: 100px;
+   }
+   .profile-name {
+    margin: 5px 0;
+   }
+   .profile-menu {
+    padding-left: 0;
+    width: 100%;
+    overflow: auto;
+    justify-content: center;
+   }
+   .profile-menu-link {
+    padding: 16px;
+    font-size: 15px;
+    color: #fff;
+   }
+  }
+
+  @media screen and (max-width: 480px) {
+   .profile-menu-link:nth-last-child(1),
+   .profile-menu-link:nth-last-child(2) {
+    display: none;
+   }
+  }*/

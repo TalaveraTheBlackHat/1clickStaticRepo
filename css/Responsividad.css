@@ -1,0 +1,542 @@
+.card_respon{
+    margin-left: 250px; 
+    width: 550px !important;
+    margin-top: -10px;
+}
+.montoRespon{
+    font-size: 18px; 
+    font-weight: bold;
+}
+.profileRespon {
+    position: relative;
+    height: 65px;
+    z-index: 1;
+}
+.profile-avatar-Respon {
+    min-width: 500px;
+    max-height: 150px;
+    position: absolute;
+    align-items: center;
+    display: flex;
+    z-index: 1;
+    bottom: 0px;
+    left: 24px;
+}
+.MiCarritoRespon{
+    overflow-y: auto; 
+    width: 100%; 
+    height: 900px; 
+    margin-top: -280px; 
+    margin-left: 20px;
+}
+.submitRespon {
+    position: relative;
+    display: block;
+    align-items: center;
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    padding: 8px 48px;
+    margin-top: -300px;
+    border: 2px solid #75759E;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all ease .2s;
+}
+.form-item-boton-pago {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 300px 350px;
+}
+.submitFinalizar{
+    position: relative;
+    display: block;
+    align-items: center;
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    padding: 8px 48px;
+    margin-top: -300px;
+    border: 2px solid #75759E;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all ease .2s;
+    top: 180px; 
+    left: 150px;
+    &:hover{
+        background-color: #EDA261;
+        border: 2px solid #EDA261;
+    };
+    
+}
+.form-item-botones-Respon{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 300px 350px;
+}
+.img_carrito_respon{
+    background-color: #fff; 
+    width: 1349px; 
+    height: 1200px;
+}
+
+@media screen and (max-width: 535px) {
+/*Estilos para pantallas con ancho máximo de 535px*/
+    body{
+        overflow-x: hidden !important;
+    }
+    .encappal {
+      width: 350px !important;
+      height: 650px !important; /*Mantenemos la altura original*/
+    }
+    .container {
+        min-width: 340px !important;
+    }
+    .containerCarrusel{
+        left: 50% !important;
+        width:245px !important;
+    }
+    nav ul a {
+        width: 80px !important;
+    }
+    .navbar-expand-md .navbar-collapse {
+        margin-left: -20px !important;
+        margin-right: 30px !important;
+    }
+    .navbar-expand-md .navbar-nav .nav-link {
+        width: 70px !important;
+    }
+    nav ul li {
+        margin-right: 0px !important;
+    }
+    .letras{
+        margin-top: -2px !important;
+        font-size: .6rem !important;
+        display: flex;
+        justify-content: center !important;
+    }
+    .logo1{
+        width: 60px !important;
+        height: 30px !important;
+        margin-top: -15px !important;
+    }
+    .input-field {
+        width: 50px !important;
+        height: 20px !important;
+        margin-right: -50px !important;
+        margin-left: 10px !important;
+    }
+
+    ul:not(.browser-default) > li {
+        width: 20px !important;
+    }
+    .ion-ios-search-strong:before {
+        margin-top: 24px !important;
+        font-size: 1rem !important;
+    }
+    .fa {
+        font-size: 1rem !important;
+    }
+
+    .card_profile {
+        margin: 0px -200px !important;
+    }
+    .profile-avatar-Respon {
+        position: absolute;
+        align-items: center;
+        display: flex;
+        z-index: 1;
+        bottom: 16px;
+        left: 24px;
+        height: 20px;
+        top: 117px;
+    }
+
+    .cart-products {
+        margin: 0 -270px auto !important;
+        width: 310px !important;
+    }
+    .botonCarrito {
+        justify-content: center !important;
+        font-size: .4rem !important;
+    }
+
+
+    .buttons{
+        width:60% !important;
+    }
+    .buttons button{
+        width:30px !important;
+        height:30px !important;
+    }
+    .item .content{
+        top:60% !important;
+        left:5px !important;
+        width: 167px !important;
+        margin-left: 2px !important;
+        
+    }
+
+    .item .des{
+        margin-left: -100px !important;
+        font-size: .6rem !important;
+        margin:20px 0 !important;
+    }
+    .item button{
+        font-size: .6rem !important;
+    }
+
+
+    /* CARRUSEL BAJO */
+    .swiper-boton-siguiente{
+        right: 0px !important;
+        width: 90px !important;
+        z-index: 9999;
+    }
+    .swiper-boton-anterior{
+        left: 26px !important;
+        width: 90px !important;
+        z-index: 9999;
+    }
+
+    #soporte{
+        background-color: transparent !important;
+    }
+    #tecnologia{
+        background-color: transparent !important;
+    }
+    #promociones{
+        background-color: transparent !important;
+    }
+    #mi-cuenta{
+        background-color: transparent !important;
+    }
+    #mi-cuenta{
+        background-color: transparent !important;
+    }
+    #carroFlotante{
+        background-color: transparent !important;
+    }
+    .item:nth-child(4){
+        display: none !important;
+    }
+
+
+    .vista2{
+        height: auto !important;
+    }
+    .contenedorInterno {
+        width: 100% !important;
+        height: 100% !important;
+        display: table-row !important;
+    }
+    .title_tecno{
+        width: 105% !important; 
+        height: 30px !important; 
+    }
+    .h1tecno{
+        font-size: 2rem !important;
+    }
+
+    .container-pie {
+        display: none !important;
+    }
+
+
+    /* FERRETERIA PRINCIPAL */
+    .vistaFerrePrincipal {
+        display: table-row !important;
+    }
+    .profile-menu {
+        display: flex !important;
+        justify-content: left !important;
+    }
+    .profile {
+        width: 100% !important;
+        min-height: 200px !important;
+        height: 0px !important;
+    }
+    .profileRespon {
+        width: 100% !important;
+        min-height: 65px !important;
+        height: 0px !important;
+    }
+    .main-container{
+        width: 100% !important;
+    }
+
+    :root {
+        --anchoPantalla: 100% !important;
+    }
+    .section {
+        display: contents !important;
+    }
+    .contenedorTituloPregutas {
+        left: 0px !important;
+    }
+    .preguntasFrecuentes {
+        width: 100% !important;
+        
+    }
+    .preguntasFrecuentesDetalladas {
+        width: 100% !important;
+    }
+    .tituloPreguntasFrecuentes {
+        font-size: 2.3rem !important;
+    }
+    
+    .cajaContactos{
+        height: 1130px !important;
+    }
+    .contenedorContactos {
+        left: 0px !important;
+        width: 100% !important;
+        display: flex !important; 
+        justify-content: center !important; 
+        align-items: center !important;
+    }
+    .contactanos {
+        margin-top: 0px !important;
+        width: 50% !important;
+        height: 582px !important;
+        display: block !important;
+    }
+    .fico{
+        margin: 20px !important;
+    }
+    .wico{
+        margin: 20px !important;
+    }
+    .iico{
+        margin: 20px !important;
+    }
+    .tico{
+        margin: 20px !important;
+    }
+
+    .contenedorNosotros{
+        width: 100% !important;
+    }
+    .nosotros{
+        width: 100% !important;
+    }
+
+
+
+    .limite {
+        width: 100% !important;
+    }
+    .sugerenciasProducts {
+        width: 100% !important;
+        height: auto !important;
+    }
+    .imagesAdicionales {
+        margin: 100px 0 0 5px !important;
+        max-width: 200px !important;
+        width: 130px !important;
+    }
+    .imgMiniatura {
+        width: 130px !important;
+    }
+    .image-container {
+        width: 220px !important;
+        height: 220px !important;
+    }
+    .fichaTecnica {
+        margin: 330px 0 0 137px !important;
+        width: 220px !important;
+        height: 220px !important;
+    }
+    .card_respon{
+        margin-left: -126px !important; 
+        width: 210px !important;
+        margin-top: -22px !important;
+        height: 175px !important;
+    }
+    .title_respon{
+        font-size: 0.7rem !important;
+    }
+    .valor_respon{
+        margin-top: 0px !important;
+    }
+    .precio_respon{
+        font-size: 15px !important;
+        margin-top: -5px !important;
+    }
+    .vistaPrincipalMiCuenta{
+        width: 100% !important;
+    }
+    .contenedorMiCuenta {
+        width: 100% !important;
+    }
+    .main_container{
+        width: 100% !important;
+    }
+    .img_respon{
+        width: 360px !important;
+    }
+
+    .tituloCompraRespon{
+        font-size: 1.5rem;
+    }
+
+    .formu_respon{
+        display: inline-block !important;
+        width: 365px !important;
+    }
+    .box-item {
+        display: contents !important;
+    }
+    .profile-img {
+        width: 50px !important;
+        height: 50px !important;
+        margin-top: -100px !important;
+    }
+    .profile-name {
+        margin-bottom: 100px !important;
+        font-size: 10px !important;
+    }
+    .form-item input[type="text"], input[type="number"], input[type="email"] {
+        font-size: 10px !important;
+        width: 220px !important;
+        margin: 0 auto !important;
+    }
+    .submit {
+        font-size: 10px !important;
+        display: flex !important;
+        justify-content: center !important;
+        width: 240px !important;
+        left: 90px !important;
+        top: 170px;
+    }
+    .submitRespon {
+        font-size: 10px !important;
+        display: flex !important;
+        justify-content: center !important;
+        width: 150px !important;
+        margin: 0 auto !important;
+        left: 0px !important;
+        padding: 8px 10px !important; 
+    }
+
+    .MiCarritoRespon{
+        overflow-y: auto !important; 
+        width: 100% !important; 
+        height: 900px !important; 
+        margin-top: 0px !important; 
+        margin-left: 0px !important;
+    }
+    .cabeceraTabla{
+        width: 100% !important;
+    }
+    .tablaPedidos{
+        width: 20px !important;
+    }
+    .raTabla{
+        font-size: .7rem !important;
+    }
+    .accionesRespon{
+        padding: 15px 3px !important;
+    }
+    .botonNotiPedi {
+        padding: 2px 30px 0px 15px !important;
+        width: 30px !important;
+        font-size: .7rem !important;
+    }
+    .form-item-botones{
+        margin: 500px 350px !important;
+    }
+    .labelNota {
+        margin-left: 75px !important;
+    }
+    .notaPedido {
+        left: -5px !important;
+        min-width: 100px !important;
+        width: 300px !important;
+    }
+    .divObservacion {
+        top: 800px !important;
+        left: 25px !important;
+        width: 300px !important;
+    }
+    .form-item-boton-pago {
+        margin: 50px -50px !important;
+    }
+    .box-transferencia {
+        width: 350px !important;
+        margin-left: -43px !important;
+        height: 270px !important;
+    }
+    .minibox-transferencia{
+        width: 355px !important;
+    }
+    .notaSubida {
+        top: 20px !important;
+        left: 10px !important;
+    }
+    .documentosCargados {
+        width: 300px !important;
+        margin-left: 2px !important;
+        height: 160px !important;
+        font-size: .5rem !important;
+        background-color: #e0e0e0;
+    }
+    .inputArchiRespon{
+        margin-top: 25px !important; 
+        margin-left: 15px !important;
+    }
+
+    .img_carrito_respon{ 
+        width: 100% !important; 
+        height: 1200px !important;
+    }
+    .tituloDocumentos {
+        display: none !important;
+    }
+    .notaDocumentos {
+        display: none !important;
+    }
+    .labelObservacion {
+        display: none !important;
+    }
+    .form-item-botones-Respon{
+        margin: 0px -70px !important;
+    }
+    .observacionText {
+        display: none !important;
+    }
+    .montoRespon{
+        font-size: 14px !important;
+    }
+    .selectEstado {
+        width: 300px !important;
+    }
+    #estado, #municipio, #direccion{
+        width: 300px !important;
+    }
+    .divObservacionPago {
+        display: none !important;
+    }
+    .submitFinalizar{
+        left: 90px !important;
+    }
+    #dolar{
+        margin-left: 200px !important;
+    }
+    #bs{
+        margin-left: 40px !important;
+    }
+    .listaDocumentos {
+        font-size: .4rem !important;
+    }
+    .liDocumento{
+        min-width: 300px !important;
+        margin-bottom: -10px !important;
+    }
+}
+
+  
