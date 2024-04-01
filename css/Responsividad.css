@@ -377,7 +377,7 @@
         width: 100% !important;
     }
     .img_respon{
-        width: 360px !important;
+        width: 100% !important;
     }
 
     .tituloCompraRespon{
@@ -514,6 +514,10 @@
     }
     .selectEstado {
         width: 300px !important;
+        margin: 0 auto !important;
+    }
+    .selectMunicipio {
+        margin: 0 auto !important;
     }
     #estado, #municipio, #direccion{
         width: 300px !important;
