@@ -3,6 +3,18 @@
     width: 550px !important;
     margin-top: -10px;
 }
+.socialdivico {
+    background-color: #191919;
+    border-radius: 3em;
+    width: 90%;
+    height: 60px;
+    /* padding: 14px; */
+    margin-top: 290px;
+    /* margin-top: 15px; */
+    color: white;
+    box-shadow: 3px 3px 15px rgb(0, 0, 0),
+                     -3px -3px 15px rgb(58, 58, 58);
+}
 .montoRespon{
     font-size: 18px; 
     font-weight: bold;
@@ -101,7 +113,7 @@
         width:245px !important;
     }
     nav ul a {
-        width: 80px !important;
+        width: 95px !important;
     }
     .navbar-expand-md .navbar-collapse {
         margin-left: -20px !important;
