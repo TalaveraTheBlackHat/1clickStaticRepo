@@ -170,7 +170,10 @@
         height: 20px;
         top: 117px;
     }
-
+    .profile-avatar{
+    bottom: 66px !important;
+    height: 0px !important;  
+    }
     .cart-products {
         margin: 0 -270px auto !important;
         width: 310px !important;
