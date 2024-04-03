@@ -428,8 +428,8 @@
         display: flex !important;
         justify-content: center !important;
         width: 240px !important;
-        left: 90px !important;
-        top: 170px;
+        margin-left: 90px !important;
+        /* top: 170px; */
     }
     .submitRespon {
         font-size: 10px !important;
