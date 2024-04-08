@@ -68,15 +68,15 @@ $.ajax({
         var valoracion4 = '';
         var valoracion5 = '';
         if(productos[0][i].valoracion === 1){
-          valoracion1 = 'checked=""';
+          valoracion1 = '';
         }else if(productos[0][i].valoracion === 2){
-          valoracion2 = 'checked=""';
+          valoracion2 = '';
         }else if(productos[0][i].valoracion === 3){
-          valoracion3 = 'checked=""';
+          valoracion3 = '';
         }else if(productos[0][i].valoracion === 4){
-          valoracion4 = 'checked=""';
+          valoracion4 = '';
         }else if(productos[0][i].valoracion === 5){
-          valoracion5 = 'checked=""';
+          valoracion5 = '';
         }else{
           valoracion1 = '';
           valoracion2 = '';
@@ -133,15 +133,15 @@ $.ajax({
         var valoracion4 = '';
         var valoracion5 = '';
         if(productos[0][i].valoracion === 1){
-         valoracion1 = 'checked=""';
+         valoracion1 = '';
         }else if(productos[0][i].valoracion === 2){
-         valoracion2 = 'checked=""';
+         valoracion2 = '';
         }else if(productos[0][i].valoracion === 3){
-         valoracion3 = 'checked=""';
+         valoracion3 = '';
         }else if(productos[0][i].valoracion === 4){
-         valoracion4 = 'checked=""';
+         valoracion4 = '';
         }else if(productos[0][i].valoracion === 5){
-         valoracion5 = 'checked=""';
+         valoracion5 = '';
         }else{
           valoracion1 = '';
           valoracion2 = '';
@@ -248,15 +248,15 @@ function cargarPagina1(){
         var valoracion4 = '';
         var valoracion5 = '';
         if(productos[0][i].valoracion === 1){
-          valoracion1 = 'checked=""';
+          valoracion1 = '';
         }else if(productos[0][i].valoracion === 2){
-          valoracion2 = 'checked=""';
+          valoracion2 = '';
         }else if(productos[0][i].valoracion === 3){
-          valoracion3 = 'checked=""';
+          valoracion3 = '';
         }else if(productos[0][i].valoracion === 4){
-          valoracion4 = 'checked=""';
+          valoracion4 = '';
         }else if(productos[0][i].valoracion === 5){
-          valoracion5 = 'checked=""';
+          valoracion5 = '';
         }else{
           valoracion1 = '';
           valoracion2 = '';
@@ -318,15 +318,15 @@ function cargarPagina1(){
         var valoracion4 = '';
         var valoracion5 = '';
         if(productos[0][i].valoracion === 1){
-          valoracion1 = 'checked=""';
+          valoracion1 = '';
         }else if(productos[0][i].valoracion === 2){
-          valoracion2 = 'checked=""';
+          valoracion2 = '';
         }else if(productos[0][i].valoracion === 3){
-          valoracion3 = 'checked=""';
+          valoracion3 = '';
         }else if(productos[0][i].valoracion === 4){
-          valoracion4 = 'checked=""';
+          valoracion4 = '';
         }else if(productos[0][i].valoracion === 5){
-          valoracion5 = 'checked=""';
+          valoracion5 = '';
         }else{
           valoracion1 = '';
           valoracion2 = '';
@@ -436,15 +436,15 @@ function cargarPagina2(){
         var valoracion4 = '';
         var valoracion5 = '';
         if(productos[0][i].valoracion === 1){
-          valoracion1 = 'checked=""';
+          valoracion1 = '';
         }else if(productos[0][i].valoracion === 2){
-          valoracion2 = 'checked=""';
+          valoracion2 = '';
         }else if(productos[0][i].valoracion === 3){
-          valoracion3 = 'checked=""';
+          valoracion3 = '';
         }else if(productos[0][i].valoracion === 4){
-          valoracion4 = 'checked=""';
+          valoracion4 = '';
         }else if(productos[0][i].valoracion === 5){
-          valoracion5 = 'checked=""';
+          valoracion5 = '';
         }else{
           valoracion1 = '';
           valoracion2 = '';
@@ -506,15 +506,15 @@ function cargarPagina2(){
         var valoracion4 = '';
         var valoracion5 = '';
         if(productos[0][i].valoracion === 1){
-          valoracion1 = 'checked=""';
+          valoracion1 = '';
         }else if(productos[0][i].valoracion === 2){
-          valoracion2 = 'checked=""';
+          valoracion2 = '';
         }else if(productos[0][i].valoracion === 3){
-          valoracion3 = 'checked=""';
+          valoracion3 = '';
         }else if(productos[0][i].valoracion === 4){
-          valoracion4 = 'checked=""';
+          valoracion4 = '';
         }else if(productos[0][i].valoracion === 5){
-          valoracion5 = 'checked=""';
+          valoracion5 = '';
         }else{
           valoracion1 = '';
           valoracion2 = '';
@@ -630,15 +630,15 @@ function cargarPagina3(){
         var valoracion4 = '';
         var valoracion5 = '';
         if(productos[0][i].valoracion === 1){
-          valoracion1 = 'checked=""';
+          valoracion1 = '';
         }else if(productos[0][i].valoracion === 2){
-          valoracion2 = 'checked=""';
+          valoracion2 = '';
         }else if(productos[0][i].valoracion === 3){
-          valoracion3 = 'checked=""';
+          valoracion3 = '';
         }else if(productos[0][i].valoracion === 4){
-          valoracion4 = 'checked=""';
+          valoracion4 = '';
         }else if(productos[0][i].valoracion === 5){
-          valoracion5 = 'checked=""';
+          valoracion5 = '';
         }else{
           valoracion1 = '';
           valoracion2 = '';
@@ -702,15 +702,15 @@ function cargarPagina3(){
         var valoracion4 = '';
         var valoracion5 = '';
         if(productos[0][i].valoracion === 1){
-          valoracion1 = 'checked=""';
+          valoracion1 = '';
         }else if(productos[0][i].valoracion === 2){
-          valoracion2 = 'checked=""';
+          valoracion2 = '';
         }else if(productos[0][i].valoracion === 3){
-          valoracion3 = 'checked=""';
+          valoracion3 = '';
         }else if(productos[0][i].valoracion === 4){
-          valoracion4 = 'checked=""';
+          valoracion4 = '';
         }else if(productos[0][i].valoracion === 5){
-          valoracion5 = 'checked=""';
+          valoracion5 = '';
         }else{
           valoracion1 = '';
           valoracion2 = '';
@@ -825,15 +825,15 @@ function cargarPagina4(){
         var valoracion4 = '';
         var valoracion5 = '';
         if(productos[0][i].valoracion === 1){
-          valoracion1 = 'checked=""';
+          valoracion1 = '';
         }else if(productos[0][i].valoracion === 2){
-          valoracion2 = 'checked=""';
+          valoracion2 = '';
         }else if(productos[0][i].valoracion === 3){
-          valoracion3 = 'checked=""';
+          valoracion3 = '';
         }else if(productos[0][i].valoracion === 4){
-          valoracion4 = 'checked=""';
+          valoracion4 = '';
         }else if(productos[0][i].valoracion === 5){
-          valoracion5 = 'checked=""';
+          valoracion5 = '';
         }else{
           valoracion1 = '';
           valoracion2 = '';
@@ -896,15 +896,15 @@ function cargarPagina4(){
         var valoracion4 = '';
         var valoracion5 = '';
         if(productos[0][i].valoracion === 1){
-          valoracion1 = 'checked=""';
+          valoracion1 = '';
         }else if(productos[0][i].valoracion === 2){
-          valoracion2 = 'checked=""';
+          valoracion2 = '';
         }else if(productos[0][i].valoracion === 3){
-          valoracion3 = 'checked=""';
+          valoracion3 = '';
         }else if(productos[0][i].valoracion === 4){
-          valoracion4 = 'checked=""';
+          valoracion4 = '';
         }else if(productos[0][i].valoracion === 5){
-          valoracion5 = 'checked=""';
+          valoracion5 = '';
         }else{
           valoracion1 = '';
           valoracion2 = '';
@@ -1018,15 +1018,15 @@ function cargarPagina5(){
         var valoracion4 = '';
         var valoracion5 = '';
         if(productos[0][i].valoracion === 1){
-          valoracion1 = 'checked=""';
+          valoracion1 = '';
         }else if(productos[0][i].valoracion === 2){
-          valoracion2 = 'checked=""';
+          valoracion2 = '';
         }else if(productos[0][i].valoracion === 3){
-          valoracion3 = 'checked=""';
+          valoracion3 = '';
         }else if(productos[0][i].valoracion === 4){
-          valoracion4 = 'checked=""';
+          valoracion4 = '';
         }else if(productos[0][i].valoracion === 5){
-          valoracion5 = 'checked=""';
+          valoracion5 = '';
         }else{
           valoracion1 = '';
           valoracion2 = '';
@@ -1089,15 +1089,15 @@ function cargarPagina5(){
         var valoracion4 = '';
         var valoracion5 = '';
         if(productos[0][i].valoracion === 1){
-          valoracion1 = 'checked=""';
+          valoracion1 = '';
         }else if(productos[0][i].valoracion === 2){
-          valoracion2 = 'checked=""';
+          valoracion2 = '';
         }else if(productos[0][i].valoracion === 3){
-          valoracion3 = 'checked=""';
+          valoracion3 = '';
         }else if(productos[0][i].valoracion === 4){
-          valoracion4 = 'checked=""';
+          valoracion4 = '';
         }else if(productos[0][i].valoracion === 5){
-          valoracion5 = 'checked=""';
+          valoracion5 = '';
         }else{
           valoracion1 = '';
           valoracion2 = '';
@@ -1274,15 +1274,15 @@ function filtadoElectrico(dato){
                 var valoracion4 = '';
                 var valoracion5 = '';
                 if(productos[i].valoracion === 1){
-                valoracion1 = 'checked=""';
+                valoracion1 = '';
                 }else if(productos[i].valoracion === 2){
-                valoracion2 = 'checked=""';
+                valoracion2 = '';
                 }else if(productos[i].valoracion === 3){
-                valoracion3 = 'checked=""';
+                valoracion3 = '';
                 }else if(productos[i].valoracion === 4){
-                valoracion4 = 'checked=""';
+                valoracion4 = '';
                 }else if(productos[i].valoracion === 5){
-                valoracion5 = 'checked=""';
+                valoracion5 = '';
                 }else{
                 valoracion1 = '';
                 valoracion2 = '';
@@ -1463,15 +1463,15 @@ function filtadoElectrico(dato){
                 var valoracion4 = '';
                 var valoracion5 = '';
                 if(productos[i].valoracion === 1){
-                valoracion1 = 'checked=""';
+                valoracion1 = '';
                 }else if(productos[i].valoracion === 2){
-                valoracion2 = 'checked=""';
+                valoracion2 = '';
                 }else if(productos[i].valoracion === 3){
-                valoracion3 = 'checked=""';
+                valoracion3 = '';
                 }else if(productos[i].valoracion === 4){
-                valoracion4 = 'checked=""';
+                valoracion4 = '';
                 }else if(productos[i].valoracion === 5){
-                valoracion5 = 'checked=""';
+                valoracion5 = '';
                 }else{
                 valoracion1 = '';
                 valoracion2 = '';
@@ -1648,15 +1648,15 @@ function filtadoElectrico(dato){
                 var valoracion4 = '';
                 var valoracion5 = '';
                 if(productos[i].valoracion === 1){
-                valoracion1 = 'checked=""';
+                valoracion1 = '';
                 }else if(productos[i].valoracion === 2){
-                valoracion2 = 'checked=""';
+                valoracion2 = '';
                 }else if(productos[i].valoracion === 3){
-                valoracion3 = 'checked=""';
+                valoracion3 = '';
                 }else if(productos[i].valoracion === 4){
-                valoracion4 = 'checked=""';
+                valoracion4 = '';
                 }else if(productos[i].valoracion === 5){
-                valoracion5 = 'checked=""';
+                valoracion5 = '';
                 }else{
                 valoracion1 = '';
                 valoracion2 = '';
@@ -1834,15 +1834,15 @@ function filtadoElectrico(dato){
                 var valoracion4 = '';
                 var valoracion5 = '';
                 if(productos[i].valoracion === 1){
-                valoracion1 = 'checked=""';
+                valoracion1 = '';
                 }else if(productos[i].valoracion === 2){
-                valoracion2 = 'checked=""';
+                valoracion2 = '';
                 }else if(productos[i].valoracion === 3){
-                valoracion3 = 'checked=""';
+                valoracion3 = '';
                 }else if(productos[i].valoracion === 4){
-                valoracion4 = 'checked=""';
+                valoracion4 = '';
                 }else if(productos[i].valoracion === 5){
-                valoracion5 = 'checked=""';
+                valoracion5 = '';
                 }else{
                 valoracion1 = '';
                 valoracion2 = '';
@@ -2036,15 +2036,15 @@ function precioFiltro(dato){
                 var valoracion4 = '';
                 var valoracion5 = '';
                 if(productos[i].valoracion === 1){
-                valoracion1 = 'checked=""';
+                valoracion1 = '';
                 }else if(productos[i].valoracion === 2){
-                valoracion2 = 'checked=""';
+                valoracion2 = '';
                 }else if(productos[i].valoracion === 3){
-                valoracion3 = 'checked=""';
+                valoracion3 = '';
                 }else if(productos[i].valoracion === 4){
-                valoracion4 = 'checked=""';
+                valoracion4 = '';
                 }else if(productos[i].valoracion === 5){
-                valoracion5 = 'checked=""';
+                valoracion5 = '';
                 }else{
                 valoracion1 = '';
                 valoracion2 = '';
@@ -2230,15 +2230,15 @@ function precioFiltro(dato){
                 var valoracion4 = '';
                 var valoracion5 = '';
                 if(productos[i].valoracion === 1){
-                valoracion1 = 'checked=""';
+                valoracion1 = '';
                 }else if(productos[i].valoracion === 2){
-                valoracion2 = 'checked=""';
+                valoracion2 = '';
                 }else if(productos[i].valoracion === 3){
-                valoracion3 = 'checked=""';
+                valoracion3 = '';
                 }else if(productos[i].valoracion === 4){
-                valoracion4 = 'checked=""';
+                valoracion4 = '';
                 }else if(productos[i].valoracion === 5){
-                valoracion5 = 'checked=""';
+                valoracion5 = '';
                 }else{
                 valoracion1 = '';
                 valoracion2 = '';
@@ -2441,15 +2441,15 @@ function precioLimite(info){
                 var valoracion4 = '';
                 var valoracion5 = '';
                 if(productos[i].valoracion === 1){
-                valoracion1 = 'checked=""';
+                valoracion1 = '';
                 }else if(productos[i].valoracion === 2){
-                valoracion2 = 'checked=""';
+                valoracion2 = '';
                 }else if(productos[i].valoracion === 3){
-                valoracion3 = 'checked=""';
+                valoracion3 = '';
                 }else if(productos[i].valoracion === 4){
-                valoracion4 = 'checked=""';
+                valoracion4 = '';
                 }else if(productos[i].valoracion === 5){
-                valoracion5 = 'checked=""';
+                valoracion5 = '';
                 }else{
                 valoracion1 = '';
                 valoracion2 = '';
@@ -2650,15 +2650,15 @@ function precioLimite(info){
                   var valoracion4 = '';
                   var valoracion5 = '';
                   if(productos[i].valoracion === 1){
-                  valoracion1 = 'checked=""';
+                  valoracion1 = '';
                   }else if(productos[i].valoracion === 2){
-                  valoracion2 = 'checked=""';
+                  valoracion2 = '';
                   }else if(productos[i].valoracion === 3){
-                  valoracion3 = 'checked=""';
+                  valoracion3 = '';
                   }else if(productos[i].valoracion === 4){
-                  valoracion4 = 'checked=""';
+                  valoracion4 = '';
                   }else if(productos[i].valoracion === 5){
-                  valoracion5 = 'checked=""';
+                  valoracion5 = '';
                   }else{
                   valoracion1 = '';
                   valoracion2 = '';
