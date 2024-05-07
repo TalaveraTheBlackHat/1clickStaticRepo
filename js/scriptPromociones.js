@@ -117,7 +117,7 @@ $.ajax({
         <div class="card__precio__antes">`+productos[0][i].precio_old+"$"+`</div>
     <div class="card__precio_nuevo card__precio">`+productos[0][i].precio_promocion+"$"+`</div>
     <div class="card__precio__descuento">-`+productos[0][i].porcentaje_descuento+`%</div>
-    <div style="display: none;" class="stockDisponible">`+productos[0][i].cantidad+`</div>
+    <div style="display: none;" class="stockDisponible">`+productos[1][i].cantidad+`</div>
         
         `+botonAnadir+`
         `+botonComprar+`
@@ -185,7 +185,7 @@ $.ajax({
         <div class="card__precio__antes">`+productos[0][i].precio_old+"$"+`</div>
     <div class="card__precio_nuevo card__precio">`+productos[0][i].precio_promocion+"$"+`</div>
     <div class="card__precio__descuento">-`+productos[0][i].porcentaje_descuento+`%</div>
-    <div style="display: none;" class="stockDisponible">`+productos[0][i].cantidad+`</div>
+    <div style="display: none;" class="stockDisponible">`+productos[1][i].cantidad+`</div>
         
         `+botonAnadir+`
         `+botonComprar+`
@@ -303,7 +303,7 @@ function cargarPagina1(){
         <div class="card__precio__antes">`+productos[0][i].precio_old+"$"+`</div>
     <div class="card__precio_nuevo card__precio">`+productos[0][i].precio_promocion+"$"+`</div>
     <div class="card__precio__descuento">-`+productos[0][i].porcentaje_descuento+`%</div>
-    <div style="display: none;" class="stockDisponible">`+productos[0][i].cantidad+`</div>
+    <div style="display: none;" class="stockDisponible">`+productos[1][i].cantidad+`</div>
         
         `+botonAnadir+`
         `+botonComprar+`
@@ -376,7 +376,7 @@ function cargarPagina1(){
         <div class="card__precio__antes">`+productos[0][i].precio_old+"$"+`</div>
     <div class="card__precio_nuevo card__precio">`+productos[0][i].precio_promocion+"$"+`</div>
     <div class="card__precio__descuento">-`+productos[0][i].porcentaje_descuento+`%</div>
-    <div style="display: none;" class="stockDisponible">`+productos[0][i].cantidad+`</div>
+    <div style="display: none;" class="stockDisponible">`+productos[1][i].cantidad+`</div>
         
         `+botonAnadir+`
         `+botonComprar+`
@@ -497,7 +497,7 @@ function cargarPagina2(){
       <div class="card__precio__antes">`+productos[0][i].precio_old+"$"+`</div>
     <div class="card__precio_nuevo card__precio">`+productos[0][i].precio_promocion+"$"+`</div>
     <div class="card__precio__descuento">-`+productos[0][i].porcentaje_descuento+`%</div>
-    <div style="display: none;" class="stockDisponible">`+productos[0][i].cantidad+`</div>
+    <div style="display: none;" class="stockDisponible">`+productos[1][i].cantidad+`</div>
       
       `+botonAnadir+`
         `+botonComprar+`
@@ -570,7 +570,7 @@ function cargarPagina2(){
         <div class="card__precio__antes">`+productos[0][i].precio_old+"$"+`</div>
     <div class="card__precio_nuevo card__precio">`+productos[0][i].precio_promocion+"$"+`</div>
     <div class="card__precio__descuento">-`+productos[0][i].porcentaje_descuento+`%</div>
-    <div style="display: none;" class="stockDisponible">`+productos[0][i].cantidad+`</div>
+    <div style="display: none;" class="stockDisponible">`+productos[1][i].cantidad+`</div>
         
         `+botonAnadir+`
         `+botonComprar+`
@@ -697,7 +697,7 @@ function cargarPagina3(){
       <div class="card__precio__antes">`+productos[0][i].precio_old+"$"+`</div>
     <div class="card__precio_nuevo card__precio">`+productos[0][i].precio_promocion+"$"+`</div>
     <div class="card__precio__descuento">-`+productos[0][i].porcentaje_descuento+`%</div>
-    <div style="display: none;" class="stockDisponible">`+productos[0][i].cantidad+`</div>
+    <div style="display: none;" class="stockDisponible">`+productos[1][i].cantidad+`</div>
       
       `+botonAnadir+`
         `+botonComprar+`
@@ -772,7 +772,7 @@ function cargarPagina3(){
       <div class="card__precio__antes">`+productos[0][i].precio_old+"$"+`</div>
     <div class="card__precio_nuevo card__precio">`+productos[0][i].precio_promocion+"$"+`</div>
     <div class="card__precio__descuento">-`+productos[0][i].porcentaje_descuento+`%</div>
-    <div style="display: none;" class="stockDisponible">`+productos[0][i].cantidad+`</div>
+    <div style="display: none;" class="stockDisponible">`+productos[1][i].cantidad+`</div>
       
       `+botonAnadir+`
         `+botonComprar+`
@@ -898,7 +898,7 @@ function cargarPagina4(){
       <div class="card__precio__antes">`+productos[0][i].precio_old+"$"+`</div>
     <div class="card__precio_nuevo card__precio">`+productos[0][i].precio_promocion+"$"+`</div>
     <div class="card__precio__descuento">-`+productos[0][i].porcentaje_descuento+`%</div>
-    <div style="display: none;" class="stockDisponible">`+productos[0][i].cantidad+`</div>
+    <div style="display: none;" class="stockDisponible">`+productos[1][i].cantidad+`</div>
       
       `+botonAnadir+`
         `+botonComprar+`
@@ -972,7 +972,7 @@ function cargarPagina4(){
       <div class="card__precio__antes">`+productos[0][i].precio_old+"$"+`</div>
     <div class="card__precio_nuevo card__precio">`+productos[0][i].precio_promocion+"$"+`</div>
     <div class="card__precio__descuento">-`+productos[0][i].porcentaje_descuento+`%</div>
-    <div style="display: none;" class="stockDisponible">`+productos[0][i].cantidad+`</div>
+    <div style="display: none;" class="stockDisponible">`+productos[1][i].cantidad+`</div>
       
       `+botonAnadir+`
         `+botonComprar+`
@@ -1097,7 +1097,7 @@ function cargarPagina5(){
       <div class="card__precio__antes">`+productos[0][i].precio_old+"$"+`</div>
     <div class="card__precio_nuevo card__precio">`+productos[0][i].precio_promocion+"$"+`</div>
     <div class="card__precio__descuento">-`+productos[0][i].porcentaje_descuento+`%</div>
-    <div style="display: none;" class="stockDisponible">`+productos[0][i].cantidad+`</div>
+    <div style="display: none;" class="stockDisponible">`+productos[1][i].cantidad+`</div>
       
       `+botonAnadir+`
         `+botonComprar+`
@@ -1171,7 +1171,7 @@ function cargarPagina5(){
       <div class="card__precio__antes">`+productos[0][i].precio_old+"$"+`</div>
     <div class="card__precio_nuevo card__precio">`+productos[0][i].precio_promocion+"$"+`</div>
     <div class="card__precio__descuento">-`+productos[0][i].porcentaje_descuento+`%</div>
-    <div style="display: none;" class="stockDisponible">`+productos[0][i].cantidad+`</div>
+    <div style="display: none;" class="stockDisponible">`+productos[1][i].cantidad+`</div>
       
       `+botonAnadir+`
         `+botonComprar+`
