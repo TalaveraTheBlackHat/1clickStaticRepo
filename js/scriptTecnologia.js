@@ -89,8 +89,8 @@ $.ajax({
           botonAnadir = "<button style='margin-left: -100px;' class='card__btn btn-add-cart' data-id="+productos[0][i].cod_interno+">Añadir <i style='font-size: 10px;' class='fa fa-shopping-cart'></i></button>";
           botonComprar = "<button onclick='verCarrito("+idUser+")' style='margin-top: -36px; margin-left: 100px;' class='card__btn btn-add-cart card__btn-solid'>Comprar <i style='font-size: 10px;' class='fa fa-credit-card-alt'></i></button>";
         }else{
-          botonAnadir = "<button style='margin-left: -100px;' class='card__btn' data-id="+productos[0][i].cod_interno+">Añadir <i style='font-size: 10px;' class='fa fa-shopping-cart'></i></button>";
-          botonComprar = "<button style='margin-top: -36px; margin-left: 100px;' class='card__btn card__btn-solid'>Comprar <i style='font-size: 10px;' class='fa fa-credit-card-alt'></i></button>";
+          botonAnadir = "<button onclick='compraRegistro()' style='margin-left: -100px;' class='card__btn' data-id="+productos[0][i].cod_interno+">Añadir <i style='font-size: 10px;' class='fa fa-shopping-cart'></i></button>";
+          botonComprar = "<button onclick='compraRegistro()' style='margin-top: -36px; margin-left: 100px;' class='card__btn card__btn-solid'>Comprar <i style='font-size: 10px;' class='fa fa-credit-card-alt'></i></button>";
         }
         const enviar = productos[0][i].id;
         const row = document.createElement('div');
@@ -114,7 +114,8 @@ $.ajax({
       </div>
         </div>
         <div class="card__precio">`+productos[0][i].precio_unitario+"$"+`</div>
-        
+        <div style="display: none;" class="stockDisponible">`+productos[0][i].cantidad+`</div>
+                
         `+botonAnadir+`
         `+botonComprar+`
         
@@ -154,8 +155,8 @@ $.ajax({
           botonAnadir = "<button style='margin-left: -100px;' class='card__btn btn-add-cart' data-id="+productos[0][i].cod_interno+">Añadir <i style='font-size: 10px;' class='fa fa-shopping-cart'></i></button>";
           botonComprar = "<button onclick='verCarrito("+idUser+")' style='margin-top: -36px; margin-left: 100px;' class='card__btn btn-add-cart card__btn-solid'>Comprar <i style='font-size: 10px;' class='fa fa-credit-card-alt'></i></button>";
         }else{
-          botonAnadir = "<button style='margin-left: -100px;' class='card__btn' data-id="+productos[0][i].cod_interno+">Añadir <i style='font-size: 10px;' class='fa fa-shopping-cart'></i></button>";
-          botonComprar = "<button style='margin-top: -36px; margin-left: 100px;' class='card__btn card__btn-solid'>Comprar <i style='font-size: 10px;' class='fa fa-credit-card-alt'></i></button>";
+          botonAnadir = "<button onclick='compraRegistro()' style='margin-left: -100px;' class='card__btn' data-id="+productos[0][i].cod_interno+">Añadir <i style='font-size: 10px;' class='fa fa-shopping-cart'></i></button>";
+          botonComprar = "<button onclick='compraRegistro()' style='margin-top: -36px; margin-left: 100px;' class='card__btn card__btn-solid'>Comprar <i style='font-size: 10px;' class='fa fa-credit-card-alt'></i></button>";
         }
         const enviar = productos[0][i].id;
         const row = document.createElement('div');
@@ -179,6 +180,7 @@ $.ajax({
           </div>
         </div>
         <div class="card__precio">`+productos[0][i].precio_unitario+"$"+`</div>
+        <div style="display: none;" class="stockDisponible">`+productos[0][i].cantidad+`</div>
         
         `+botonAnadir+`
         `+botonComprar+`
@@ -269,8 +271,8 @@ function cargarPagina1(){
           botonAnadir = "<button style='margin-left: -100px;' class='card__btn btn-add-cart' data-id="+productos[0][i].cod_interno+">Añadir <i style='font-size: 10px;' class='fa fa-shopping-cart'></i></button>";
           botonComprar = "<button onclick='verCarrito("+idUser+")' style='margin-top: -36px; margin-left: 100px;' class='card__btn btn-add-cart card__btn-solid'>Comprar <i style='font-size: 10px;' class='fa fa-credit-card-alt'></i></button>";
         }else{
-          botonAnadir = "<button style='margin-left: -100px;' class='card__btn' data-id="+productos[0][i].cod_interno+">Añadir <i style='font-size: 10px;' class='fa fa-shopping-cart'></i></button>";
-          botonComprar = "<button style='margin-top: -36px; margin-left: 100px;' class='card__btn card__btn-solid'>Comprar <i style='font-size: 10px;' class='fa fa-credit-card-alt'></i></button>";
+          botonAnadir = "<button onclick='compraRegistro()' style='margin-left: -100px;' class='card__btn' data-id="+productos[0][i].cod_interno+">Añadir <i style='font-size: 10px;' class='fa fa-shopping-cart'></i></button>";
+          botonComprar = "<button onclick='compraRegistro()' style='margin-top: -36px; margin-left: 100px;' class='card__btn card__btn-solid'>Comprar <i style='font-size: 10px;' class='fa fa-credit-card-alt'></i></button>";
         }
         const enviar = productos[0][i].id;
     const row = document.createElement('div');
@@ -294,6 +296,7 @@ function cargarPagina1(){
       </div>
         </div>
         <div class="card__precio">`+productos[0][i].precio_unitario+"$"+`</div>
+        <div style="display: none;" class="stockDisponible">`+productos[0][i].cantidad+`</div>
         
         `+botonAnadir+`
         `+botonComprar+`
@@ -339,8 +342,8 @@ function cargarPagina1(){
           botonAnadir = "<button style='margin-left: -100px;' class='card__btn btn-add-cart' data-id="+productos[0][i].cod_interno+">Añadir <i style='font-size: 10px;' class='fa fa-shopping-cart'></i></button>";
           botonComprar = "<button onclick='verCarrito("+idUser+")' style='margin-top: -36px; margin-left: 100px;' class='card__btn btn-add-cart card__btn-solid'>Comprar <i style='font-size: 10px;' class='fa fa-credit-card-alt'></i></button>";
         }else{
-          botonAnadir = "<button style='margin-left: -100px;' class='card__btn' data-id="+productos[0][i].cod_interno+">Añadir <i style='font-size: 10px;' class='fa fa-shopping-cart'></i></button>";
-          botonComprar = "<button style='margin-top: -36px; margin-left: 100px;' class='card__btn card__btn-solid'>Comprar <i style='font-size: 10px;' class='fa fa-credit-card-alt'></i></button>";
+          botonAnadir = "<button onclick='compraRegistro()' style='margin-left: -100px;' class='card__btn' data-id="+productos[0][i].cod_interno+">Añadir <i style='font-size: 10px;' class='fa fa-shopping-cart'></i></button>";
+          botonComprar = "<button onclick='compraRegistro()' style='margin-top: -36px; margin-left: 100px;' class='card__btn card__btn-solid'>Comprar <i style='font-size: 10px;' class='fa fa-credit-card-alt'></i></button>";
         } 
         const enviar = productos[0][i].id;    
         const row = document.createElement('div');
@@ -364,6 +367,7 @@ function cargarPagina1(){
           </div>
         </div>
         <div class="card__precio">`+productos[0][i].precio_unitario+"$"+`</div>
+        <div style="display: none;" class="stockDisponible">`+productos[0][i].cantidad+`</div>
         
         `+botonAnadir+`
         `+botonComprar+`
@@ -457,8 +461,8 @@ function cargarPagina2(){
           botonAnadir = "<button style='margin-left: -100px;' class='card__btn btn-add-cart' data-id="+productos[0][i].cod_interno+">Añadir <i style='font-size: 10px;' class='fa fa-shopping-cart'></i></button>";
           botonComprar = "<button onclick='verCarrito("+idUser+")' style='margin-top: -36px; margin-left: 100px;' class='card__btn btn-add-cart card__btn-solid'>Comprar <i style='font-size: 10px;' class='fa fa-credit-card-alt'></i></button>";
         }else{
-          botonAnadir = "<button style='margin-left: -100px;' class='card__btn' data-id="+productos[0][i].cod_interno+">Añadir <i style='font-size: 10px;' class='fa fa-shopping-cart'></i></button>";
-          botonComprar = "<button style='margin-top: -36px; margin-left: 100px;' class='card__btn card__btn-solid'>Comprar <i style='font-size: 10px;' class='fa fa-credit-card-alt'></i></button>";
+          botonAnadir = "<button onclick='compraRegistro()' style='margin-left: -100px;' class='card__btn' data-id="+productos[0][i].cod_interno+">Añadir <i style='font-size: 10px;' class='fa fa-shopping-cart'></i></button>";
+          botonComprar = "<button onclick='compraRegistro()' style='margin-top: -36px; margin-left: 100px;' class='card__btn card__btn-solid'>Comprar <i style='font-size: 10px;' class='fa fa-credit-card-alt'></i></button>";
         }
         const enviar = productos[0][i].id;
       const row = document.createElement('div');
@@ -482,6 +486,7 @@ function cargarPagina2(){
       </div>
       </div>
       <div class="card__precio">`+productos[0][i].precio_unitario+"$"+`</div>
+      <div style="display: none;" class="stockDisponible">`+productos[0][i].cantidad+`</div>
       
       `+botonAnadir+`
         `+botonComprar+`
@@ -527,8 +532,8 @@ function cargarPagina2(){
           botonAnadir = "<button style='margin-left: -100px;' class='card__btn btn-add-cart' data-id="+productos[0][i].cod_interno+">Añadir <i style='font-size: 10px;' class='fa fa-shopping-cart'></i></button>";
           botonComprar = "<button onclick='verCarrito("+idUser+")' style='margin-top: -36px; margin-left: 100px;' class='card__btn btn-add-cart card__btn-solid'>Comprar <i style='font-size: 10px;' class='fa fa-credit-card-alt'></i></button>";
         }else{
-          botonAnadir = "<button style='margin-left: -100px;' class='card__btn' data-id="+productos[0][i].cod_interno+">Añadir <i style='font-size: 10px;' class='fa fa-shopping-cart'></i></button>";
-          botonComprar = "<button style='margin-top: -36px; margin-left: 100px;' class='card__btn card__btn-solid'>Comprar <i style='font-size: 10px;' class='fa fa-credit-card-alt'></i></button>";
+          botonAnadir = "<button onclick='compraRegistro()' style='margin-left: -100px;' class='card__btn' data-id="+productos[0][i].cod_interno+">Añadir <i style='font-size: 10px;' class='fa fa-shopping-cart'></i></button>";
+          botonComprar = "<button onclick='compraRegistro()' style='margin-top: -36px; margin-left: 100px;' class='card__btn card__btn-solid'>Comprar <i style='font-size: 10px;' class='fa fa-credit-card-alt'></i></button>";
         }
         const enviar = productos[0][i].id;
         const row = document.createElement('div');
@@ -552,6 +557,7 @@ function cargarPagina2(){
         </div>
         </div>
         <div class="card__precio">`+productos[0][i].precio_unitario+"$"+`</div>
+        <div style="display: none;" class="stockDisponible">`+productos[0][i].cantidad+`</div>
         
         `+botonAnadir+`
         `+botonComprar+`
@@ -651,8 +657,8 @@ function cargarPagina3(){
           botonAnadir = "<button style='margin-left: -100px;' class='card__btn btn-add-cart' data-id="+productos[0][i].cod_interno+">Añadir <i style='font-size: 10px;' class='fa fa-shopping-cart'></i></button>";
           botonComprar = "<button onclick='verCarrito("+idUser+")' style='margin-top: -36px; margin-left: 100px;' class='card__btn btn-add-cart card__btn-solid'>Comprar <i style='font-size: 10px;' class='fa fa-credit-card-alt'></i></button>";
         }else{
-          botonAnadir = "<button style='margin-left: -100px;' class='card__btn' data-id="+productos[0][i].cod_interno+">Añadir <i style='font-size: 10px;' class='fa fa-shopping-cart'></i></button>";
-          botonComprar = "<button style='margin-top: -36px; margin-left: 100px;' class='card__btn card__btn-solid'>Comprar <i style='font-size: 10px;' class='fa fa-credit-card-alt'></i></button>";
+          botonAnadir = "<button onclick='compraRegistro()' style='margin-left: -100px;' class='card__btn' data-id="+productos[0][i].cod_interno+">Añadir <i style='font-size: 10px;' class='fa fa-shopping-cart'></i></button>";
+          botonComprar = "<button onclick='compraRegistro()' style='margin-top: -36px; margin-left: 100px;' class='card__btn card__btn-solid'>Comprar <i style='font-size: 10px;' class='fa fa-credit-card-alt'></i></button>";
         }
       const enviar = productos[0][i].id;  
       const row = document.createElement('div');
@@ -676,6 +682,7 @@ function cargarPagina3(){
       </div>
       </div>
       <div class="card__precio">`+productos[0][i].precio_unitario+"$"+`</div>
+      <div style="display: none;" class="stockDisponible">`+productos[0][i].cantidad+`</div>
       
       `+botonAnadir+`
         `+botonComprar+`
@@ -723,8 +730,8 @@ function cargarPagina3(){
           botonAnadir = "<button style='margin-left: -100px;' class='card__btn btn-add-cart' data-id="+productos[0][i].cod_interno+">Añadir <i style='font-size: 10px;' class='fa fa-shopping-cart'></i></button>";
           botonComprar = "<button onclick='verCarrito("+idUser+")' style='margin-top: -36px; margin-left: 100px;' class='card__btn btn-add-cart card__btn-solid'>Comprar <i style='font-size: 10px;' class='fa fa-credit-card-alt'></i></button>";
         }else{
-          botonAnadir = "<button style='margin-left: -100px;' class='card__btn' data-id="+productos[0][i].cod_interno+">Añadir <i style='font-size: 10px;' class='fa fa-shopping-cart'></i></button>";
-          botonComprar = "<button style='margin-top: -36px; margin-left: 100px;' class='card__btn card__btn-solid'>Comprar <i style='font-size: 10px;' class='fa fa-credit-card-alt'></i></button>";
+          botonAnadir = "<button onclick='compraRegistro()' style='margin-left: -100px;' class='card__btn' data-id="+productos[0][i].cod_interno+">Añadir <i style='font-size: 10px;' class='fa fa-shopping-cart'></i></button>";
+          botonComprar = "<button onclick='compraRegistro()' style='margin-top: -36px; margin-left: 100px;' class='card__btn card__btn-solid'>Comprar <i style='font-size: 10px;' class='fa fa-credit-card-alt'></i></button>";
         }
       const enviar = productos[0][i].id;  
       const row = document.createElement('div');
@@ -748,6 +755,7 @@ function cargarPagina3(){
       </div>
       </div>
       <div class="card__precio">`+productos[0][i].precio_unitario+"$"+`</div>
+      <div style="display: none;" class="stockDisponible">`+productos[0][i].cantidad+`</div>
       
       `+botonAnadir+`
         `+botonComprar+`
@@ -846,8 +854,8 @@ function cargarPagina4(){
           botonAnadir = "<button style='margin-left: -100px;' class='card__btn btn-add-cart' data-id="+productos[0][i].cod_interno+">Añadir <i style='font-size: 10px;' class='fa fa-shopping-cart'></i></button>";
           botonComprar = "<button onclick='verCarrito("+idUser+")' style='margin-top: -36px; margin-left: 100px;' class='card__btn btn-add-cart card__btn-solid'>Comprar <i style='font-size: 10px;' class='fa fa-credit-card-alt'></i></button>";
         }else{
-          botonAnadir = "<button style='margin-left: -100px;' class='card__btn' data-id="+productos[0][i].cod_interno+">Añadir <i style='font-size: 10px;' class='fa fa-shopping-cart'></i></button>";
-          botonComprar = "<button style='margin-top: -36px; margin-left: 100px;' class='card__btn card__btn-solid'>Comprar <i style='font-size: 10px;' class='fa fa-credit-card-alt'></i></button>";
+          botonAnadir = "<button onclick='compraRegistro()' style='margin-left: -100px;' class='card__btn' data-id="+productos[0][i].cod_interno+">Añadir <i style='font-size: 10px;' class='fa fa-shopping-cart'></i></button>";
+          botonComprar = "<button onclick='compraRegistro()' style='margin-top: -36px; margin-left: 100px;' class='card__btn card__btn-solid'>Comprar <i style='font-size: 10px;' class='fa fa-credit-card-alt'></i></button>";
         }
       const enviar = productos[0][i].id;  
       const row = document.createElement('div');
@@ -871,6 +879,7 @@ function cargarPagina4(){
       </div>
       </div>
       <div class="card__precio">`+productos[0][i].precio_unitario+"$"+`</div>
+      <div style="display: none;" class="stockDisponible">`+productos[0][i].cantidad+`</div>
       
       `+botonAnadir+`
         `+botonComprar+`
@@ -917,8 +926,8 @@ function cargarPagina4(){
           botonAnadir = "<button style='margin-left: -100px;' class='card__btn btn-add-cart' data-id="+productos[0][i].cod_interno+">Añadir <i style='font-size: 10px;' class='fa fa-shopping-cart'></i></button>";
           botonComprar = "<button onclick='verCarrito("+idUser+")' style='margin-top: -36px; margin-left: 100px;' class='card__btn btn-add-cart card__btn-solid'>Comprar <i style='font-size: 10px;' class='fa fa-credit-card-alt'></i></button>";
         }else{
-          botonAnadir = "<button style='margin-left: -100px;' class='card__btn' data-id="+productos[0][i].cod_interno+">Añadir <i style='font-size: 10px;' class='fa fa-shopping-cart'></i></button>";
-          botonComprar = "<button style='margin-top: -36px; margin-left: 100px;' class='card__btn card__btn-solid'>Comprar <i style='font-size: 10px;' class='fa fa-credit-card-alt'></i></button>";
+          botonAnadir = "<button onclick='compraRegistro()' style='margin-left: -100px;' class='card__btn' data-id="+productos[0][i].cod_interno+">Añadir <i style='font-size: 10px;' class='fa fa-shopping-cart'></i></button>";
+          botonComprar = "<button onclick='compraRegistro()' style='margin-top: -36px; margin-left: 100px;' class='card__btn card__btn-solid'>Comprar <i style='font-size: 10px;' class='fa fa-credit-card-alt'></i></button>";
         }
       const enviar = productos[0][i].id;  
       const row = document.createElement('div');
@@ -942,6 +951,7 @@ function cargarPagina4(){
       </div>
       </div>
       <div class="card__precio">`+productos[0][i].precio_unitario+"$"+`</div>
+      <div style="display: none;" class="stockDisponible">`+productos[0][i].cantidad+`</div>
       
       `+botonAnadir+`
         `+botonComprar+`
@@ -1039,8 +1049,8 @@ function cargarPagina5(){
           botonAnadir = "<button style='margin-left: -100px;' class='card__btn btn-add-cart' data-id="+productos[0][i].cod_interno+">Añadir <i style='font-size: 10px;' class='fa fa-shopping-cart'></i></button>";
           botonComprar = "<button onclick='verCarrito("+idUser+")' style='margin-top: -36px; margin-left: 100px;' class='card__btn btn-add-cart card__btn-solid'>Comprar <i style='font-size: 10px;' class='fa fa-credit-card-alt'></i></button>";
         }else{
-          botonAnadir = "<button style='margin-left: -100px;' class='card__btn' data-id="+productos[0][i].cod_interno+">Añadir <i style='font-size: 10px;' class='fa fa-shopping-cart'></i></button>";
-          botonComprar = "<button style='margin-top: -36px; margin-left: 100px;' class='card__btn card__btn-solid'>Comprar <i style='font-size: 10px;' class='fa fa-credit-card-alt'></i></button>";
+          botonAnadir = "<button onclick='compraRegistro()' style='margin-left: -100px;' class='card__btn' data-id="+productos[0][i].cod_interno+">Añadir <i style='font-size: 10px;' class='fa fa-shopping-cart'></i></button>";
+          botonComprar = "<button onclick='compraRegistro()' style='margin-top: -36px; margin-left: 100px;' class='card__btn card__btn-solid'>Comprar <i style='font-size: 10px;' class='fa fa-credit-card-alt'></i></button>";
         }
         const enviar = productos[0][i].id;
       const row = document.createElement('div');
@@ -1064,6 +1074,7 @@ function cargarPagina5(){
       </div>
       </div>
       <div class="card__precio">`+productos[0][i].precio_unitario+"$"+`</div>
+      <div style="display: none;" class="stockDisponible">`+productos[0][i].cantidad+`</div>
       
       `+botonAnadir+`
         `+botonComprar+`
@@ -1110,8 +1121,8 @@ function cargarPagina5(){
           botonAnadir = "<button style='margin-left: -100px;' class='card__btn btn-add-cart' data-id="+productos[0][i].cod_interno+">Añadir <i style='font-size: 10px;' class='fa fa-shopping-cart'></i></button>";
           botonComprar = "<button onclick='verCarrito("+idUser+")' style='margin-top: -36px; margin-left: 100px;' class='card__btn btn-add-cart card__btn-solid'>Comprar <i style='font-size: 10px;' class='fa fa-credit-card-alt'></i></button>";
         }else{
-          botonAnadir = "<button style='margin-left: -100px;' class='card__btn' data-id="+productos[0][i].cod_interno+">Añadir <i style='font-size: 10px;' class='fa fa-shopping-cart'></i></button>";
-          botonComprar = "<button style='margin-top: -36px; margin-left: 100px;' class='card__btn card__btn-solid'>Comprar <i style='font-size: 10px;' class='fa fa-credit-card-alt'></i></button>";
+          botonAnadir = "<button onclick='compraRegistro()' style='margin-left: -100px;' class='card__btn' data-id="+productos[0][i].cod_interno+">Añadir <i style='font-size: 10px;' class='fa fa-shopping-cart'></i></button>";
+          botonComprar = "<button onclick='compraRegistro()' style='margin-top: -36px; margin-left: 100px;' class='card__btn card__btn-solid'>Comprar <i style='font-size: 10px;' class='fa fa-credit-card-alt'></i></button>";
         }
       const enviar = productos[0][i].id;  
       const row = document.createElement('div');
@@ -1135,6 +1146,7 @@ function cargarPagina5(){
       </div>
       </div>
       <div class="card__precio">`+productos[0][i].precio_unitario+"$"+`</div>
+      <div style="display: none;" class="stockDisponible">`+productos[0][i].cantidad+`</div>
       
       `+botonAnadir+`
         `+botonComprar+`
@@ -1295,8 +1307,8 @@ function filtadoElectrico(dato){
                 botonAnadir = "<button style='margin-left: -100px;' class='card__btn btn-add-cart' data-id="+productos[i].codigo_profit+">Añadir <i style='font-size: 10px;' class='fa fa-shopping-cart'></i></button>";
                 botonComprar = "<button onclick='verCarrito("+idUser+")' style='margin-top: -36px; margin-left: 100px;' class='card__btn btn-add-cart card__btn-solid'>Comprar <i style='font-size: 10px;' class='fa fa-credit-card-alt'></i></button>";
                 }else{
-                botonAnadir = "<button style='margin-left: -100px;' class='card__btn' data-id="+productos[i].codigo_profit+">Añadir <i style='font-size: 10px;' class='fa fa-shopping-cart'></i></button>";
-                botonComprar = "<button style='margin-top: -36px; margin-left: 100px;' class='card__btn card__btn-solid'>Comprar <i style='font-size: 10px;' class='fa fa-credit-card-alt'></i></button>";
+                botonAnadir = "<button onclick='compraRegistro()' style='margin-left: -100px;' class='card__btn' data-id="+productos[i].codigo_profit+">Añadir <i style='font-size: 10px;' class='fa fa-shopping-cart'></i></button>";
+                botonComprar = "<button onclick='compraRegistro()' style='margin-top: -36px; margin-left: 100px;' class='card__btn card__btn-solid'>Comprar <i style='font-size: 10px;' class='fa fa-credit-card-alt'></i></button>";
                 }
                 const enviar = productos[i].id;
                 const row = document.createElement('div');
@@ -1320,6 +1332,7 @@ function filtadoElectrico(dato){
             </div>
                 </div>
                 <div class="card__precio">`+productos[i].precio_unitario+"$"+`</div>
+                <div style="display: none;" class="stockDisponible">`+productos[i].cantidad+`</div>
                 
                 `+botonAnadir+`
                 `+botonComprar+`
@@ -1484,8 +1497,8 @@ function filtadoElectrico(dato){
                 botonAnadir = "<button style='margin-left: -100px;' class='card__btn btn-add-cart' data-id="+productos[i].codigo_profit+">Añadir <i style='font-size: 10px;' class='fa fa-shopping-cart'></i></button>";
                 botonComprar = "<button onclick='verCarrito("+idUser+")' style='margin-top: -36px; margin-left: 100px;' class='card__btn btn-add-cart card__btn-solid'>Comprar <i style='font-size: 10px;' class='fa fa-credit-card-alt'></i></button>";
                 }else{
-                botonAnadir = "<button style='margin-left: -100px;' class='card__btn' data-id="+productos[i].codigo_profit+">Añadir <i style='font-size: 10px;' class='fa fa-shopping-cart'></i></button>";
-                botonComprar = "<button style='margin-top: -36px; margin-left: 100px;' class='card__btn card__btn-solid'>Comprar <i style='font-size: 10px;' class='fa fa-credit-card-alt'></i></button>";
+                botonAnadir = "<button onclick='compraRegistro()' style='margin-left: -100px;' class='card__btn' data-id="+productos[i].codigo_profit+">Añadir <i style='font-size: 10px;' class='fa fa-shopping-cart'></i></button>";
+                botonComprar = "<button onclick='compraRegistro()' style='margin-top: -36px; margin-left: 100px;' class='card__btn card__btn-solid'>Comprar <i style='font-size: 10px;' class='fa fa-credit-card-alt'></i></button>";
                 }
                 const enviar = productos[i].id;
                 const row = document.createElement('div');
@@ -1509,6 +1522,7 @@ function filtadoElectrico(dato){
             </div>
                 </div>
                 <div class="card__precio">`+productos[i].precio_unitario+"$"+`</div>
+                <div style="display: none;" class="stockDisponible">`+productos[i].cantidad+`</div>
                 
                 `+botonAnadir+`
                 `+botonComprar+`
@@ -1669,8 +1683,8 @@ function filtadoElectrico(dato){
                 botonAnadir = "<button style='margin-left: -100px;' class='card__btn btn-add-cart' data-id="+productos[i].codigo_profit+">Añadir <i style='font-size: 10px;' class='fa fa-shopping-cart'></i></button>";
                 botonComprar = "<button onclick='verCarrito("+idUser+")' style='margin-top: -36px; margin-left: 100px;' class='card__btn btn-add-cart card__btn-solid'>Comprar <i style='font-size: 10px;' class='fa fa-credit-card-alt'></i></button>";
                 }else{
-                botonAnadir = "<button style='margin-left: -100px;' class='card__btn' data-id="+productos[i].codigo_profit+">Añadir <i style='font-size: 10px;' class='fa fa-shopping-cart'></i></button>";
-                botonComprar = "<button style='margin-top: -36px; margin-left: 100px;' class='card__btn card__btn-solid'>Comprar <i style='font-size: 10px;' class='fa fa-credit-card-alt'></i></button>";
+                botonAnadir = "<button onclick='compraRegistro()' style='margin-left: -100px;' class='card__btn' data-id="+productos[i].codigo_profit+">Añadir <i style='font-size: 10px;' class='fa fa-shopping-cart'></i></button>";
+                botonComprar = "<button onclick='compraRegistro()' style='margin-top: -36px; margin-left: 100px;' class='card__btn card__btn-solid'>Comprar <i style='font-size: 10px;' class='fa fa-credit-card-alt'></i></button>";
                 }
                 const enviar = productos[i].id;
                 const row = document.createElement('div');
@@ -1694,6 +1708,7 @@ function filtadoElectrico(dato){
             </div>
                 </div>
                 <div class="card__precio">`+productos[i].precio_unitario+"$"+`</div>
+                <div style="display: none;" class="stockDisponible">`+productos[i].cantidad+`</div>
                 
                 `+botonAnadir+`
                 `+botonComprar+`
@@ -1855,8 +1870,8 @@ function filtadoElectrico(dato){
                 botonAnadir = "<button style='margin-left: -100px;' class='card__btn btn-add-cart' data-id="+productos[i].codigo_profit+">Añadir <i style='font-size: 10px;' class='fa fa-shopping-cart'></i></button>";
                 botonComprar = "<button onclick='verCarrito("+idUser+")' style='margin-top: -36px; margin-left: 100px;' class='card__btn btn-add-cart card__btn-solid'>Comprar <i style='font-size: 10px;' class='fa fa-credit-card-alt'></i></button>";
                 }else{
-                botonAnadir = "<button style='margin-left: -100px;' class='card__btn' data-id="+productos[i].codigo_profit+">Añadir <i style='font-size: 10px;' class='fa fa-shopping-cart'></i></button>";
-                botonComprar = "<button style='margin-top: -36px; margin-left: 100px;' class='card__btn card__btn-solid'>Comprar <i style='font-size: 10px;' class='fa fa-credit-card-alt'></i></button>";
+                botonAnadir = "<button onclick='compraRegistro()' style='margin-left: -100px;' class='card__btn' data-id="+productos[i].codigo_profit+">Añadir <i style='font-size: 10px;' class='fa fa-shopping-cart'></i></button>";
+                botonComprar = "<button onclick='compraRegistro()' style='margin-top: -36px; margin-left: 100px;' class='card__btn card__btn-solid'>Comprar <i style='font-size: 10px;' class='fa fa-credit-card-alt'></i></button>";
                 }
                 const enviar = productos[i].id;
                 const row = document.createElement('div');
@@ -1880,6 +1895,7 @@ function filtadoElectrico(dato){
             </div>
                 </div>
                 <div class="card__precio">`+productos[i].precio_unitario+"$"+`</div>
+                <div style="display: none;" class="stockDisponible">`+productos[i].cantidad+`</div>
                 
                 `+botonAnadir+`
                 `+botonComprar+`
@@ -2057,8 +2073,8 @@ function precioFiltro(dato){
                 botonAnadir = "<button style='margin-left: -100px;' class='card__btn btn-add-cart' data-id="+productos[i].codigo_profit+">Añadir <i style='font-size: 10px;' class='fa fa-shopping-cart'></i></button>";
                 botonComprar = "<button onclick='verCarrito("+idUser+")' style='margin-top: -36px; margin-left: 100px;' class='card__btn btn-add-cart card__btn-solid'>Comprar <i style='font-size: 10px;' class='fa fa-credit-card-alt'></i></button>";
                 }else{
-                botonAnadir = "<button style='margin-left: -100px;' class='card__btn' data-id="+productos[i].codigo_profit+">Añadir <i style='font-size: 10px;' class='fa fa-shopping-cart'></i></button>";
-                botonComprar = "<button style='margin-top: -36px; margin-left: 100px;' class='card__btn card__btn-solid'>Comprar <i style='font-size: 10px;' class='fa fa-credit-card-alt'></i></button>";
+                botonAnadir = "<button onclick='compraRegistro()' style='margin-left: -100px;' class='card__btn' data-id="+productos[i].codigo_profit+">Añadir <i style='font-size: 10px;' class='fa fa-shopping-cart'></i></button>";
+                botonComprar = "<button onclick='compraRegistro()' style='margin-top: -36px; margin-left: 100px;' class='card__btn card__btn-solid'>Comprar <i style='font-size: 10px;' class='fa fa-credit-card-alt'></i></button>";
                 }
                 const enviar = productos[i].id;
                 const row = document.createElement('div');
@@ -2082,6 +2098,7 @@ function precioFiltro(dato){
             </div>
                 </div>
                 <div class="card__precio">`+productos[i].precio_unitario+"$"+`</div>
+                <div style="display: none;" class="stockDisponible">`+productos[i].cantidad+`</div>
                 
                 `+botonAnadir+`
                 `+botonComprar+`
@@ -2251,8 +2268,8 @@ function precioFiltro(dato){
                 botonAnadir = "<button style='margin-left: -100px;' class='card__btn btn-add-cart' data-id="+productos[i].codigo_profit+">Añadir <i style='font-size: 10px;' class='fa fa-shopping-cart'></i></button>";
                 botonComprar = "<button onclick='verCarrito("+idUser+")' style='margin-top: -36px; margin-left: 100px;' class='card__btn btn-add-cart card__btn-solid'>Comprar <i style='font-size: 10px;' class='fa fa-credit-card-alt'></i></button>";
                 }else{
-                botonAnadir = "<button style='margin-left: -100px;' class='card__btn' data-id="+productos[i].codigo_profit+">Añadir <i style='font-size: 10px;' class='fa fa-shopping-cart'></i></button>";
-                botonComprar = "<button style='margin-top: -36px; margin-left: 100px;' class='card__btn card__btn-solid'>Comprar <i style='font-size: 10px;' class='fa fa-credit-card-alt'></i></button>";
+                botonAnadir = "<button onclick='compraRegistro()' style='margin-left: -100px;' class='card__btn' data-id="+productos[i].codigo_profit+">Añadir <i style='font-size: 10px;' class='fa fa-shopping-cart'></i></button>";
+                botonComprar = "<button onclick='compraRegistro()' style='margin-top: -36px; margin-left: 100px;' class='card__btn card__btn-solid'>Comprar <i style='font-size: 10px;' class='fa fa-credit-card-alt'></i></button>";
                 }
                 const enviar = productos[i].id;
                 const row = document.createElement('div');
@@ -2276,6 +2293,7 @@ function precioFiltro(dato){
             </div>
                 </div>
                 <div class="card__precio">`+productos[i].precio_unitario+"$"+`</div>
+                <div style="display: none;" class="stockDisponible">`+productos[i].cantidad+`</div>
                 
                 `+botonAnadir+`
                 `+botonComprar+`
@@ -2462,8 +2480,8 @@ function precioLimite(info){
                 botonAnadir = "<button style='margin-left: -100px;' class='card__btn btn-add-cart' data-id="+productos[i].codigo_profit+">Añadir <i style='font-size: 10px;' class='fa fa-shopping-cart'></i></button>";
                 botonComprar = "<button onclick='verCarrito("+idUser+")' style='margin-top: -36px; margin-left: 100px;' class='card__btn btn-add-cart card__btn-solid'>Comprar <i style='font-size: 10px;' class='fa fa-credit-card-alt'></i></button>";
                 }else{
-                botonAnadir = "<button style='margin-left: -100px;' class='card__btn' data-id="+productos[i].codigo_profit+">Añadir <i style='font-size: 10px;' class='fa fa-shopping-cart'></i></button>";
-                botonComprar = "<button style='margin-top: -36px; margin-left: 100px;' class='card__btn card__btn-solid'>Comprar <i style='font-size: 10px;' class='fa fa-credit-card-alt'></i></button>";
+                botonAnadir = "<button onclick='compraRegistro()' style='margin-left: -100px;' class='card__btn' data-id="+productos[i].codigo_profit+">Añadir <i style='font-size: 10px;' class='fa fa-shopping-cart'></i></button>";
+                botonComprar = "<button onclick='compraRegistro()' style='margin-top: -36px; margin-left: 100px;' class='card__btn card__btn-solid'>Comprar <i style='font-size: 10px;' class='fa fa-credit-card-alt'></i></button>";
                 }
                 const enviar = productos[i].id;
                 const row = document.createElement('div');
@@ -2487,6 +2505,7 @@ function precioLimite(info){
             </div>
                 </div>
                 <div class="card__precio">`+productos[i].precio_unitario+"$"+`</div>
+                <div style="display: none;" class="stockDisponible">`+productos[i].cantidad+`</div>
                 
                 `+botonAnadir+`
                 `+botonComprar+`
@@ -2671,8 +2690,8 @@ function precioLimite(info){
                   botonAnadir = "<button style='margin-left: -100px;' class='card__btn btn-add-cart' data-id="+productos[i].codigo_profit+">Añadir <i style='font-size: 10px;' class='fa fa-shopping-cart'></i></button>";
                   botonComprar = "<button onclick='verCarrito("+idUser+")' style='margin-top: -36px; margin-left: 100px;' class='card__btn btn-add-cart card__btn-solid'>Comprar <i style='font-size: 10px;' class='fa fa-credit-card-alt'></i></button>";
                   }else{
-                  botonAnadir = "<button style='margin-left: -100px;' class='card__btn' data-id="+productos[i].codigo_profit+">Añadir <i style='font-size: 10px;' class='fa fa-shopping-cart'></i></button>";
-                  botonComprar = "<button style='margin-top: -36px; margin-left: 100px;' class='card__btn card__btn-solid'>Comprar <i style='font-size: 10px;' class='fa fa-credit-card-alt'></i></button>";
+                  botonAnadir = "<button onclick='compraRegistro()' style='margin-left: -100px;' class='card__btn' data-id="+productos[i].codigo_profit+">Añadir <i style='font-size: 10px;' class='fa fa-shopping-cart'></i></button>";
+                  botonComprar = "<button onclick='compraRegistro()' style='margin-top: -36px; margin-left: 100px;' class='card__btn card__btn-solid'>Comprar <i style='font-size: 10px;' class='fa fa-credit-card-alt'></i></button>";
                   }
                   const enviar = productos[i].id;
                   const row = document.createElement('div');
@@ -2696,6 +2715,7 @@ function precioLimite(info){
               </div>
                   </div>
                   <div class="card__precio">`+productos[i].precio_unitario+"$"+`</div>
+                  <div style="display: none;" class="stockDisponible">`+productos[i].cantidad+`</div>
                   
                   `+botonAnadir+`
                   `+botonComprar+`
