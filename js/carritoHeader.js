@@ -12,7 +12,6 @@ var listaCarrito;
 var i=0;
 //CARGA O INICIALIZA LOCALSTORAGE
 
-
 window.onload = function(){
 listaCarrito = JSON.parse(localStorage.getItem("valores")) || [];
 
@@ -59,7 +58,7 @@ function deleteProduct(e) {
         
             
     }
-    //FIX: El contador se quedaba con "1" aunque ubiera 0 productos
+    //FIX: El contador se quedaba con "1" aunque no existiera (0) productos
     if ((buyThings.length === 0) && (value.length === 0)){
         priceTotal.innerHTML = 0;
         amountProduct.innerHTML = 0;
@@ -68,31 +67,47 @@ function deleteProduct(e) {
 }
 
 function readTheContent(product){
+
     var precioA = product.querySelector('.card__precio').textContent;
     precioA = precioA.slice(0,precioA.length-1);
+
+    var stock = product.querySelector('.stockDisponible').textContent;
+    var idProducto = product.querySelector('button').getAttribute('data-id');
+
     const infoProduct = {
         image: product.querySelector('div img').src,
         title: product.querySelector('.card__title').textContent,
         price: precioA,
         id: product.querySelector('button').getAttribute('data-id'),
-        amount: 1
+        amount: 1,
+        stock: stock
     }
     totalCard = parseFloat(totalCard) + parseFloat(infoProduct.price);
     totalCard = totalCard.toFixed(2);
     
-    //CARGAR DATOS A LOCALSTORAGE
+    listaContar = listaCarrito.filter(listaCarrito => listaCarrito.identificador == idProducto);
     
-    listaCarrito.push({
-        identificador: infoProduct.id,
-        imagen: infoProduct.image,
-        descripcion: infoProduct.title,
-        precio: infoProduct.price,
-        cantidad: infoProduct.amount
-      });
-      // Guarda los datos en localStorage
-      localStorage.setItem("valores", JSON.stringify(listaCarrito));
-    
-    //FIN DE LA CARGAR DE DATOS
+    if(listaContar.length+1 <= stock){
+        //CARGAR DATOS A LOCALSTORAGE
+
+        listaCarrito.push({
+            identificador: infoProduct.id,
+            imagen: infoProduct.image,
+            descripcion: infoProduct.title,
+            precio: infoProduct.price,
+            cantidad: infoProduct.amount
+          });
+          // Guarda los datos en localStorage
+          localStorage.setItem("valores", JSON.stringify(listaCarrito));
+          //FIN DE LA CARGAR DE DATOS
+          Swal.fire('Carrito de Compras', 'Su Articulo se ha Agregado Exitosamente al Carrito!', 'success');
+        cargarCarrito();
+    }
+    else{
+        Swal.fire('Aviso de Stock', 'No hay más stock de este articulo, si pudo agregar alguno al carrito, lo puede comprar.', 'error');
+        cargarCarrito();
+    }
+
 
     const exist = buyThings.some(product => product.id === infoProduct.id);
     if (exist) {
@@ -109,8 +124,7 @@ function readTheContent(product){
         buyThings = [...buyThings, infoProduct]
         countProduct++;
     }
-    Swal.fire('Carrito de Compras', 'Su Articulo se ha Agregado Exitosamente al Carrito!', 'success');
-    cargarCarrito();
+    
     
     //console.log(infoProduct);
 }
@@ -199,7 +213,7 @@ function cargarCarrito(){
             totalCard=parseFloat(precioGuardar)+totalCard;
             countProduct=parseInt(listaGuardar[0].cantidad)+countProduct;
             containerBuyCart.appendChild(row);}
-        }    
+    }    
         
     priceTotal.innerHTML = totalCard.toFixed(2);
     amountProduct.innerHTML = countProduct;    
@@ -214,4 +228,3 @@ function limpiarCarrito(){
     priceTotal.innerHTML = 0;
     amountProduct.innerHTML = 0;
 }
-
