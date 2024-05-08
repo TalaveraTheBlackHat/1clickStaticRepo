@@ -95,7 +95,8 @@ function readTheContent(product){
             imagen: infoProduct.image,
             descripcion: infoProduct.title,
             precio: infoProduct.price,
-            cantidad: infoProduct.amount
+            cantidad: infoProduct.amount,
+            stockProduct: infoProduct.stock
           });
           // Guarda los datos en localStorage
           localStorage.setItem("valores", JSON.stringify(listaCarrito));
