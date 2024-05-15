@@ -43,6 +43,7 @@ $.ajax({
     var idUser = "";
     var botonAnadir = "";
     var botonComprar = "";
+    var agotado = "";
 
     for (let i = longString; i > 0; i--) {
       if((URLstring[i] === "/") && (cont === 0)){
@@ -85,15 +86,20 @@ $.ajax({
           valoracion4 = '';
           valoracion5 = '';
         }
-
-        if(idUser){
-          botonAnadir = "<button style='margin-left: -100px;' href='' class='card__btn btn-add-cart' data-id="+productos[1][i].cod_interno+">Añadir <i style='font-size: 10px;' class='fa fa-shopping-cart'></i></button>";
-          botonComprar = "<button onclick='verCarrito("+idUser+")' style='margin-top: -36px; margin-left: 100px;' class='card__btn btn-add-cart card__btn-solid'>Comprar <i style='font-size: 10px;' class='fa fa-credit-card-alt'></i></button>";
-        }else{
-          botonAnadir = "<button onclick='compraRegistro()' style='margin-left: -100px;' class='card__btn' data-id="+productos[1][i].cod_interno+">Añadir <i style='font-size: 10px;' class='fa fa-shopping-cart'></i></button>";
+        
+        if ((idUser.length>0) && (productos[1][i].status_productos === 1)) {
+          botonAnadir = "<button style='margin-left: -100px;' class='card__btn btn-add-cart' data-id=" + productos[0][i].cod_interno + ">Añadir <i style='font-size: 10px;' class='fa fa-shopping-cart'></i></button>";
+          botonComprar = "<button onclick='verCarrito(" + idUser + ")' style='margin-top: -36px; margin-left: 100px;' class='card__btn btn-add-cart card__btn-solid'>Comprar <i style='font-size: 10px;' class='fa fa-credit-card-alt'></i></button>";
+        }
+        if ((!idUser) && (productos[1][i].status_productos === 1)) {
+          botonAnadir = "<button onclick='compraRegistro()' style='margin-left: -100px;' class='card__btn' data-id=" + productos[0][i].cod_interno + ">Añadir <i style='font-size: 10px;' class='fa fa-shopping-cart'></i></button>";
           botonComprar = "<button onclick='compraRegistro()' style='margin-top: -36px; margin-left: 100px;' class='card__btn card__btn-solid'>Comprar <i style='font-size: 10px;' class='fa fa-credit-card-alt'></i></button>";
         }
-          const enviar = productos[0][i].id_producto;
+        if (productos[1][i].status_productos === 0) {
+          var agotado = "<div class='texto-agotado'>AGOTADO</div>"
+        }
+
+        const enviar = productos[0][i].id_producto;
         const row = document.createElement('div');
         row.classList.add('box-card');
         row.setAttribute("id", i);
@@ -123,11 +129,15 @@ $.ajax({
         `+botonComprar+`
         
     </div>
+    `+ agotado + `
     </div>
           `;
     
         allContainerCart.appendChild(row);
         document.getElementById("cargarPagina1").className ="pagActiva";
+        agotado="";
+        botonAnadir = "";
+        botonComprar = "";
       }
     }else{ 
       for (i = 0; i < 23; i++) {
@@ -153,14 +163,20 @@ $.ajax({
           valoracion4 = '';
           valoracion5 = '';
         }
-
-        if(idUser){
-          botonAnadir = "<button style='margin-left: -100px;' href='' class='card__btn btn-add-cart' data-id="+productos[1][i].cod_interno+">Añadir <i style='font-size: 10px;' class='fa fa-shopping-cart'></i></button>";
-          botonComprar = "<button onclick='verCarrito("+idUser+")' style='margin-top: -36px; margin-left: 100px;' class='card__btn btn-add-cart card__btn-solid'>Comprar <i style='font-size: 10px;' class='fa fa-credit-card-alt'></i></button>";
-        }else{
-          botonAnadir = "<button onclick='compraRegistro()' style='margin-left: -100px;' class='card__btn' data-id="+productos[1][i].cod_interno+">Añadir <i style='font-size: 10px;' class='fa fa-shopping-cart'></i></button>";
+        
+        if (idUser && (productos[1][i].status_productos === 1)) {
+          botonAnadir = "<button style='margin-left: -100px;' class='card__btn btn-add-cart' data-id=" + productos[0][i].cod_interno + ">Añadir <i style='font-size: 10px;' class='fa fa-shopping-cart'></i></button>";
+          botonComprar = "<button onclick='verCarrito(" + idUser + ")' style='margin-top: -36px; margin-left: 100px;' class='card__btn btn-add-cart card__btn-solid'>Comprar <i style='font-size: 10px;' class='fa fa-credit-card-alt'></i></button>";
+        }
+        if (!idUser && (productos[1][i].status_productos === 1)) {
+          botonAnadir = "<button onclick='compraRegistro()' style='margin-left: -100px;' class='card__btn' data-id=" + productos[0][i].cod_interno + ">Añadir <i style='font-size: 10px;' class='fa fa-shopping-cart'></i></button>";
           botonComprar = "<button onclick='compraRegistro()' style='margin-top: -36px; margin-left: 100px;' class='card__btn card__btn-solid'>Comprar <i style='font-size: 10px;' class='fa fa-credit-card-alt'></i></button>";
         }
+
+        if (productos[1][i].status_productos === 0) {
+          var agotado = "<div class='texto-agotado'>AGOTADO</div>"
+        }
+
         const enviar = productos[0][i].id_producto;
         const row = document.createElement('div');
         row.classList.add('box-card');
@@ -191,11 +207,15 @@ $.ajax({
         `+botonComprar+`
         
     </div>
+    `+ agotado + `
     </div>
           `;
     
         allContainerCart.appendChild(row);
         document.getElementById("cargarPagina1").className ="pagActiva";
+        agotado="";
+        botonAnadir = "";
+        botonComprar = "";
       }
       
     }
@@ -272,13 +292,18 @@ function cargarPagina1(){
           valoracion5 = '';
         }
 
-        if(idUser){
-          botonAnadir = "<button style='margin-left: -100px;' href='' class='card__btn btn-add-cart' data-id="+productos[1][i].cod_interno+">Añadir <i style='font-size: 10px;' class='fa fa-shopping-cart'></i></button>";
-          botonComprar = "<button onclick='verCarrito("+idUser+")' style='margin-top: -36px; margin-left: 100px;' class='card__btn btn-add-cart card__btn-solid'>Comprar <i style='font-size: 10px;' class='fa fa-credit-card-alt'></i></button>";
-        }else{
-          botonAnadir = "<button onclick='compraRegistro()' style='margin-left: -100px;' class='card__btn' data-id="+productos[1][i].cod_interno+">Añadir <i style='font-size: 10px;' class='fa fa-shopping-cart'></i></button>";
+        if ((idUser.length>0) && (productos[1][i].status_productos === 1)) {
+          botonAnadir = "<button style='margin-left: -100px;' class='card__btn btn-add-cart' data-id=" + productos[0][i].cod_interno + ">Añadir <i style='font-size: 10px;' class='fa fa-shopping-cart'></i></button>";
+          botonComprar = "<button onclick='verCarrito(" + idUser + ")' style='margin-top: -36px; margin-left: 100px;' class='card__btn btn-add-cart card__btn-solid'>Comprar <i style='font-size: 10px;' class='fa fa-credit-card-alt'></i></button>";
+        }
+        if ((!idUser) && (productos[1][i].status_productos === 1)) {
+          botonAnadir = "<button onclick='compraRegistro()' style='margin-left: -100px;' class='card__btn' data-id=" + productos[0][i].cod_interno + ">Añadir <i style='font-size: 10px;' class='fa fa-shopping-cart'></i></button>";
           botonComprar = "<button onclick='compraRegistro()' style='margin-top: -36px; margin-left: 100px;' class='card__btn card__btn-solid'>Comprar <i style='font-size: 10px;' class='fa fa-credit-card-alt'></i></button>";
         }
+        if (productos[1][i].status_productos === 0) {
+          var agotado = "<div class='texto-agotado'>AGOTADO</div>"
+        }
+
         const enviar = productos[0][i].id_producto;
     const row = document.createElement('div');
         row.classList.add('box-card');
@@ -309,6 +334,7 @@ function cargarPagina1(){
         `+botonComprar+`
         
     </div>
+    `+ agotado + `
     </div>
     `;
 
@@ -319,6 +345,9 @@ function cargarPagina1(){
     document.getElementById("cargarPagina3").className ="";
     document.getElementById("cargarPagina4").className ="";
     document.getElementById("cargarPagina5").className ="";
+    agotado="";
+    botonAnadir = "";
+    botonComprar = "";
   }
   }else{  
   for (i = 0; i < 23; i++) {
@@ -345,13 +374,18 @@ function cargarPagina1(){
           valoracion5 = '';
         }
 
-        if(idUser){
-          botonAnadir = "<button style='margin-left: -100px;' href='' class='card__btn btn-add-cart' data-id="+productos[1][i].cod_interno+">Añadir <i style='font-size: 10px;' class='fa fa-shopping-cart'></i></button>";
-          botonComprar = "<button onclick='verCarrito("+idUser+")' style='margin-top: -36px; margin-left: 100px;' class='card__btn btn-add-cart card__btn-solid'>Comprar <i style='font-size: 10px;' class='fa fa-credit-card-alt'></i></button>";
-        }else{
-          botonAnadir = "<button onclick='compraRegistro()' style='margin-left: -100px;' class='card__btn' data-id="+productos[1][i].cod_interno+">Añadir <i style='font-size: 10px;' class='fa fa-shopping-cart'></i></button>";
+        if ((idUser.length>0) && (productos[1][i].status_productos === 1)) {
+          botonAnadir = "<button style='margin-left: -100px;' class='card__btn btn-add-cart' data-id=" + productos[0][i].cod_interno + ">Añadir <i style='font-size: 10px;' class='fa fa-shopping-cart'></i></button>";
+          botonComprar = "<button onclick='verCarrito(" + idUser + ")' style='margin-top: -36px; margin-left: 100px;' class='card__btn btn-add-cart card__btn-solid'>Comprar <i style='font-size: 10px;' class='fa fa-credit-card-alt'></i></button>";
+        }
+        if ((!idUser) && (productos[1][i].status_productos === 1)) {
+          botonAnadir = "<button onclick='compraRegistro()' style='margin-left: -100px;' class='card__btn' data-id=" + productos[0][i].cod_interno + ">Añadir <i style='font-size: 10px;' class='fa fa-shopping-cart'></i></button>";
           botonComprar = "<button onclick='compraRegistro()' style='margin-top: -36px; margin-left: 100px;' class='card__btn card__btn-solid'>Comprar <i style='font-size: 10px;' class='fa fa-credit-card-alt'></i></button>";
-        } 
+        }
+        if (productos[1][i].status_productos === 0) {
+          var agotado = "<div class='texto-agotado'>AGOTADO</div>"
+        }
+
         const enviar = productos[0][i].id_producto;    
         const row = document.createElement('div');
         row.classList.add('box-card');
@@ -382,6 +416,7 @@ function cargarPagina1(){
         `+botonComprar+`
         
     </div>
+    `+ agotado + `
     </div>
     `;
 
@@ -392,6 +427,9 @@ function cargarPagina1(){
     document.getElementById("cargarPagina3").className ="";
     document.getElementById("cargarPagina4").className ="";
     document.getElementById("cargarPagina5").className ="";
+    agotado="";
+    botonAnadir = "";
+    botonComprar = "";
   }
   }
   }
@@ -466,13 +504,18 @@ function cargarPagina2(){
           valoracion5 = '';
         }
 
-        if(idUser){
-          botonAnadir = "<button style='margin-left: -100px;' href='' class='card__btn btn-add-cart' data-id="+productos[1][i].cod_interno+">Añadir <i style='font-size: 10px;' class='fa fa-shopping-cart'></i></button>";
-          botonComprar = "<button onclick='verCarrito("+idUser+")' style='margin-top: -36px; margin-left: 100px;' class='card__btn btn-add-cart card__btn-solid'>Comprar <i style='font-size: 10px;' class='fa fa-credit-card-alt'></i></button>";
-        }else{
-          botonAnadir = "<button onclick='compraRegistro()' style='margin-left: -100px;' class='card__btn' data-id="+productos[1][i].cod_interno+">Añadir <i style='font-size: 10px;' class='fa fa-shopping-cart'></i></button>";
+        if ((idUser.length>0) && (productos[1][i].status_productos === 1)) {
+          botonAnadir = "<button style='margin-left: -100px;' class='card__btn btn-add-cart' data-id=" + productos[0][i].cod_interno + ">Añadir <i style='font-size: 10px;' class='fa fa-shopping-cart'></i></button>";
+          botonComprar = "<button onclick='verCarrito(" + idUser + ")' style='margin-top: -36px; margin-left: 100px;' class='card__btn btn-add-cart card__btn-solid'>Comprar <i style='font-size: 10px;' class='fa fa-credit-card-alt'></i></button>";
+        }
+        if ((!idUser) && (productos[1][i].status_productos === 1)) {
+          botonAnadir = "<button onclick='compraRegistro()' style='margin-left: -100px;' class='card__btn' data-id=" + productos[0][i].cod_interno + ">Añadir <i style='font-size: 10px;' class='fa fa-shopping-cart'></i></button>";
           botonComprar = "<button onclick='compraRegistro()' style='margin-top: -36px; margin-left: 100px;' class='card__btn card__btn-solid'>Comprar <i style='font-size: 10px;' class='fa fa-credit-card-alt'></i></button>";
         }
+        if (productos[1][i].status_productos === 0) {
+          var agotado = "<div class='texto-agotado'>AGOTADO</div>"
+        }
+
         const enviar = productos[0][i].id_producto;
       const row = document.createElement('div');
       row.classList.add('box-card');
@@ -503,6 +546,7 @@ function cargarPagina2(){
         `+botonComprar+`
       
       </div>
+      `+ agotado + `
       </div>
       `;
 
@@ -512,7 +556,10 @@ function cargarPagina2(){
          document.getElementById("cargarPagina2").className ="pagActiva";
          document.getElementById("cargarPagina3").className ="";
          document.getElementById("cargarPagina4").className ="";
-         document.getElementById("cargarPagina5").className ="";        
+         document.getElementById("cargarPagina5").className ="";  
+         agotado="";
+         botonAnadir = "";
+         botonComprar = "";      
   }}
   else{
       for (i = 23; i < 46; i++) {
@@ -539,13 +586,18 @@ function cargarPagina2(){
           valoracion5 = '';
         }
 
-        if(idUser){
-          botonAnadir = "<button style='margin-left: -100px;' href='' class='card__btn btn-add-cart' data-id="+productos[1][i].cod_interno+">Añadir <i style='font-size: 10px;' class='fa fa-shopping-cart'></i></button>";
-          botonComprar = "<button onclick='verCarrito("+idUser+")' style='margin-top: -36px; margin-left: 100px;' class='card__btn btn-add-cart card__btn-solid'>Comprar <i style='font-size: 10px;' class='fa fa-credit-card-alt'></i></button>";
-        }else{
-          botonAnadir = "<button onclick='compraRegistro()' style='margin-left: -100px;' class='card__btn' data-id="+productos[1][i].cod_interno+">Añadir <i style='font-size: 10px;' class='fa fa-shopping-cart'></i></button>";
+        if ((idUser.length>0) && (productos[1][i].status_productos === 1)) {
+          botonAnadir = "<button style='margin-left: -100px;' class='card__btn btn-add-cart' data-id=" + productos[0][i].cod_interno + ">Añadir <i style='font-size: 10px;' class='fa fa-shopping-cart'></i></button>";
+          botonComprar = "<button onclick='verCarrito(" + idUser + ")' style='margin-top: -36px; margin-left: 100px;' class='card__btn btn-add-cart card__btn-solid'>Comprar <i style='font-size: 10px;' class='fa fa-credit-card-alt'></i></button>";
+        }
+        if ((!idUser) && (productos[1][i].status_productos === 1)) {
+          botonAnadir = "<button onclick='compraRegistro()' style='margin-left: -100px;' class='card__btn' data-id=" + productos[0][i].cod_interno + ">Añadir <i style='font-size: 10px;' class='fa fa-shopping-cart'></i></button>";
           botonComprar = "<button onclick='compraRegistro()' style='margin-top: -36px; margin-left: 100px;' class='card__btn card__btn-solid'>Comprar <i style='font-size: 10px;' class='fa fa-credit-card-alt'></i></button>";
         }
+        if (productos[1][i].status_productos === 0) {
+          var agotado = "<div class='texto-agotado'>AGOTADO</div>"
+        }
+
         const enviar = productos[0][i].id_producto;
         const row = document.createElement('div');
         row.classList.add('box-card');
@@ -576,6 +628,7 @@ function cargarPagina2(){
         `+botonComprar+`
         
         </div>
+        `+ agotado + `
         </div>
         `;
 
@@ -585,6 +638,9 @@ function cargarPagina2(){
          document.getElementById("cargarPagina3").className ="";
          document.getElementById("cargarPagina4").className ="";
          document.getElementById("cargarPagina5").className ="";        
+         agotado="";
+         botonAnadir = "";
+         botonComprar = "";
   }
   }
     localStorage.setItem("cantPagina2",i);
@@ -666,13 +722,18 @@ function cargarPagina3(){
           valoracion5 = '';
         }
 
-        if(idUser){
-          botonAnadir = "<button style='margin-left: -100px;' href='' class='card__btn btn-add-cart' data-id="+productos[1][i].cod_interno+">Añadir <i style='font-size: 10px;' class='fa fa-shopping-cart'></i></button>";
-          botonComprar = "<button onclick='verCarrito("+idUser+")' style='margin-top: -36px; margin-left: 100px;' class='card__btn btn-add-cart card__btn-solid'>Comprar <i style='font-size: 10px;' class='fa fa-credit-card-alt'></i></button>";
-        }else{
-          botonAnadir = "<button onclick='compraRegistro()' style='margin-left: -100px;' class='card__btn' data-id="+productos[1][i].cod_interno+">Añadir <i style='font-size: 10px;' class='fa fa-shopping-cart'></i></button>";
+        if ((idUser.length>0) && (productos[1][i].status_productos === 1)) {
+          botonAnadir = "<button style='margin-left: -100px;' class='card__btn btn-add-cart' data-id=" + productos[0][i].cod_interno + ">Añadir <i style='font-size: 10px;' class='fa fa-shopping-cart'></i></button>";
+          botonComprar = "<button onclick='verCarrito(" + idUser + ")' style='margin-top: -36px; margin-left: 100px;' class='card__btn btn-add-cart card__btn-solid'>Comprar <i style='font-size: 10px;' class='fa fa-credit-card-alt'></i></button>";
+        }
+        if ((!idUser) && (productos[1][i].status_productos === 1)) {
+          botonAnadir = "<button onclick='compraRegistro()' style='margin-left: -100px;' class='card__btn' data-id=" + productos[0][i].cod_interno + ">Añadir <i style='font-size: 10px;' class='fa fa-shopping-cart'></i></button>";
           botonComprar = "<button onclick='compraRegistro()' style='margin-top: -36px; margin-left: 100px;' class='card__btn card__btn-solid'>Comprar <i style='font-size: 10px;' class='fa fa-credit-card-alt'></i></button>";
         }
+        if (productos[1][i].status_productos === 0) {
+          var agotado = "<div class='texto-agotado'>AGOTADO</div>"
+        }
+
       const enviar = productos[0][i].id_producto;  
       const row = document.createElement('div');
       row.classList.add('box-card');
@@ -703,6 +764,7 @@ function cargarPagina3(){
         `+botonComprar+`
       
       </div>
+      `+ agotado + `
       </div>
       `;
 
@@ -713,6 +775,9 @@ function cargarPagina3(){
          document.getElementById("cargarPagina3").className ="pagActiva";
          document.getElementById("cargarPagina4").className ="";
          document.getElementById("cargarPagina5").className ="";
+         agotado="";
+         botonAnadir = "";
+         botonComprar = "";
 
     k=i;
     }
@@ -741,13 +806,18 @@ function cargarPagina3(){
           valoracion5 = '';
         }
 
-        if(idUser){
-          botonAnadir = "<button style='margin-left: -100px;' href='' class='card__btn btn-add-cart' data-id="+productos[1][i].cod_interno+">Añadir <i style='font-size: 10px;' class='fa fa-shopping-cart'></i></button>";
-          botonComprar = "<button onclick='verCarrito("+idUser+")' style='margin-top: -36px; margin-left: 100px;' class='card__btn btn-add-cart card__btn-solid'>Comprar <i style='font-size: 10px;' class='fa fa-credit-card-alt'></i></button>";
-        }else{
-          botonAnadir = "<button onclick='compraRegistro()' style='margin-left: -100px;' class='card__btn' data-id="+productos[1][i].cod_interno+">Añadir <i style='font-size: 10px;' class='fa fa-shopping-cart'></i></button>";
+        if ((idUser.length>0) && (productos[1][i].status_productos === 1)) {
+          botonAnadir = "<button style='margin-left: -100px;' class='card__btn btn-add-cart' data-id=" + productos[0][i].cod_interno + ">Añadir <i style='font-size: 10px;' class='fa fa-shopping-cart'></i></button>";
+          botonComprar = "<button onclick='verCarrito(" + idUser + ")' style='margin-top: -36px; margin-left: 100px;' class='card__btn btn-add-cart card__btn-solid'>Comprar <i style='font-size: 10px;' class='fa fa-credit-card-alt'></i></button>";
+        }
+        if ((!idUser) && (productos[1][i].status_productos === 1)) {
+          botonAnadir = "<button onclick='compraRegistro()' style='margin-left: -100px;' class='card__btn' data-id=" + productos[0][i].cod_interno + ">Añadir <i style='font-size: 10px;' class='fa fa-shopping-cart'></i></button>";
           botonComprar = "<button onclick='compraRegistro()' style='margin-top: -36px; margin-left: 100px;' class='card__btn card__btn-solid'>Comprar <i style='font-size: 10px;' class='fa fa-credit-card-alt'></i></button>";
         }
+        if (productos[1][i].status_productos === 0) {
+          var agotado = "<div class='texto-agotado'>AGOTADO</div>"
+        }
+
       const enviar = productos[0][i].id_producto;  
       const row = document.createElement('div');
       row.classList.add('box-card');
@@ -778,6 +848,7 @@ function cargarPagina3(){
         `+botonComprar+`
       
       </div>
+      `+ agotado + `
       </div>
       `;
 
@@ -788,6 +859,9 @@ function cargarPagina3(){
          document.getElementById("cargarPagina3").className ="pagActiva";
          document.getElementById("cargarPagina4").className ="";
          document.getElementById("cargarPagina5").className ="";
+         agotado="";
+         botonAnadir = "";
+         botonComprar = "";
 
     k=i;
     }
@@ -867,13 +941,18 @@ function cargarPagina4(){
           valoracion5 = '';
         }
 
-        if(idUser){
-          botonAnadir = "<button style='margin-left: -100px;' href='' class='card__btn btn-add-cart' data-id="+productos[1][i].cod_interno+">Añadir <i style='font-size: 10px;' class='fa fa-shopping-cart'></i></button>";
-          botonComprar = "<button onclick='verCarrito("+idUser+")' style='margin-top: -36px; margin-left: 100px;' class='card__btn btn-add-cart card__btn-solid'>Comprar <i style='font-size: 10px;' class='fa fa-credit-card-alt'></i></button>";
-        }else{
-          botonAnadir = "<button onclick='compraRegistro()' style='margin-left: -100px;' class='card__btn' data-id="+productos[1][i].cod_interno+">Añadir <i style='font-size: 10px;' class='fa fa-shopping-cart'></i></button>";
+        if ((idUser.length>0) && (productos[1][i].status_productos === 1)) {
+          botonAnadir = "<button style='margin-left: -100px;' class='card__btn btn-add-cart' data-id=" + productos[0][i].cod_interno + ">Añadir <i style='font-size: 10px;' class='fa fa-shopping-cart'></i></button>";
+          botonComprar = "<button onclick='verCarrito(" + idUser + ")' style='margin-top: -36px; margin-left: 100px;' class='card__btn btn-add-cart card__btn-solid'>Comprar <i style='font-size: 10px;' class='fa fa-credit-card-alt'></i></button>";
+        }
+        if ((!idUser) && (productos[1][i].status_productos === 1)) {
+          botonAnadir = "<button onclick='compraRegistro()' style='margin-left: -100px;' class='card__btn' data-id=" + productos[0][i].cod_interno + ">Añadir <i style='font-size: 10px;' class='fa fa-shopping-cart'></i></button>";
           botonComprar = "<button onclick='compraRegistro()' style='margin-top: -36px; margin-left: 100px;' class='card__btn card__btn-solid'>Comprar <i style='font-size: 10px;' class='fa fa-credit-card-alt'></i></button>";
         }
+        if (productos[1][i].status_productos === 0) {
+          var agotado = "<div class='texto-agotado'>AGOTADO</div>"
+        }
+
       const enviar = productos[0][i].id_producto;  
       const row = document.createElement('div');
       row.classList.add('box-card');
@@ -904,6 +983,7 @@ function cargarPagina4(){
         `+botonComprar+`
       
       </div>
+      `+ agotado + `
       </div>
       `;
 
@@ -914,6 +994,9 @@ function cargarPagina4(){
          document.getElementById("cargarPagina3").className ="";
          document.getElementById("cargarPagina4").className ="pagActiva";
          document.getElementById("cargarPagina5").className ="";
+         agotado="";
+         botonAnadir = "";
+         botonComprar = "";
       k=i;
     }
     }else{
@@ -941,13 +1024,18 @@ function cargarPagina4(){
           valoracion5 = '';
         }
 
-        if(idUser){
-          botonAnadir = "<button style='margin-left: -100px;' href='' class='card__btn btn-add-cart' data-id="+productos[1][i].cod_interno+">Añadir <i style='font-size: 10px;' class='fa fa-shopping-cart'></i></button>";
-          botonComprar = "<button onclick='verCarrito("+idUser+")' style='margin-top: -36px; margin-left: 100px;' class='card__btn btn-add-cart card__btn-solid'>Comprar <i style='font-size: 10px;' class='fa fa-credit-card-alt'></i></button>";
-        }else{
-          botonAnadir = "<button onclick='compraRegistro()' style='margin-left: -100px;' class='card__btn' data-id="+productos[1][i].cod_interno+">Añadir <i style='font-size: 10px;' class='fa fa-shopping-cart'></i></button>";
+        if ((idUser.length>0) && (productos[1][i].status_productos === 1)) {
+          botonAnadir = "<button style='margin-left: -100px;' class='card__btn btn-add-cart' data-id=" + productos[0][i].cod_interno + ">Añadir <i style='font-size: 10px;' class='fa fa-shopping-cart'></i></button>";
+          botonComprar = "<button onclick='verCarrito(" + idUser + ")' style='margin-top: -36px; margin-left: 100px;' class='card__btn btn-add-cart card__btn-solid'>Comprar <i style='font-size: 10px;' class='fa fa-credit-card-alt'></i></button>";
+        }
+        if ((!idUser) && (productos[1][i].status_productos === 1)) {
+          botonAnadir = "<button onclick='compraRegistro()' style='margin-left: -100px;' class='card__btn' data-id=" + productos[0][i].cod_interno + ">Añadir <i style='font-size: 10px;' class='fa fa-shopping-cart'></i></button>";
           botonComprar = "<button onclick='compraRegistro()' style='margin-top: -36px; margin-left: 100px;' class='card__btn card__btn-solid'>Comprar <i style='font-size: 10px;' class='fa fa-credit-card-alt'></i></button>";
         }
+        if (productos[1][i].status_productos === 0) {
+          var agotado = "<div class='texto-agotado'>AGOTADO</div>"
+        }
+
       const enviar = productos[0][i].id_producto;  
       const row = document.createElement('div');
       row.classList.add('box-card');
@@ -978,6 +1066,7 @@ function cargarPagina4(){
         `+botonComprar+`
       
       </div>
+      `+ agotado + `
       </div>
       `;
 
@@ -988,6 +1077,9 @@ function cargarPagina4(){
          document.getElementById("cargarPagina3").className ="";
          document.getElementById("cargarPagina4").className ="pagActiva";
          document.getElementById("cargarPagina5").className ="";
+         agotado="";
+         botonAnadir = "";
+         botonComprar = "";
       k=i;
     }
     }
@@ -1066,13 +1158,18 @@ function cargarPagina5(){
           valoracion5 = '';
         }
 
-        if(idUser){
-          botonAnadir = "<button style='margin-left: -100px;' href='' class='card__btn btn-add-cart' data-id="+productos[1][i].cod_interno+">Añadir <i style='font-size: 10px;' class='fa fa-shopping-cart'></i></button>";
-          botonComprar = "<button onclick='verCarrito("+idUser+")' style='margin-top: -36px; margin-left: 100px;' class='card__btn btn-add-cart card__btn-solid'>Comprar <i style='font-size: 10px;' class='fa fa-credit-card-alt'></i></button>";
-        }else{
-          botonAnadir = "<button onclick='compraRegistro()' style='margin-left: -100px;' class='card__btn' data-id="+productos[1][i].cod_interno+">Añadir <i style='font-size: 10px;' class='fa fa-shopping-cart'></i></button>";
+        if ((idUser.length>0) && (productos[1][i].status_productos === 1)) {
+          botonAnadir = "<button style='margin-left: -100px;' class='card__btn btn-add-cart' data-id=" + productos[0][i].cod_interno + ">Añadir <i style='font-size: 10px;' class='fa fa-shopping-cart'></i></button>";
+          botonComprar = "<button onclick='verCarrito(" + idUser + ")' style='margin-top: -36px; margin-left: 100px;' class='card__btn btn-add-cart card__btn-solid'>Comprar <i style='font-size: 10px;' class='fa fa-credit-card-alt'></i></button>";
+        }
+        if ((!idUser) && (productos[1][i].status_productos === 1)) {
+          botonAnadir = "<button onclick='compraRegistro()' style='margin-left: -100px;' class='card__btn' data-id=" + productos[0][i].cod_interno + ">Añadir <i style='font-size: 10px;' class='fa fa-shopping-cart'></i></button>";
           botonComprar = "<button onclick='compraRegistro()' style='margin-top: -36px; margin-left: 100px;' class='card__btn card__btn-solid'>Comprar <i style='font-size: 10px;' class='fa fa-credit-card-alt'></i></button>";
         }
+        if (productos[1][i].status_productos === 0) {
+          var agotado = "<div class='texto-agotado'>AGOTADO</div>"
+        }
+
         const enviar = productos[0][i].id_producto;
       const row = document.createElement('div');
       row.classList.add('box-card');
@@ -1103,6 +1200,7 @@ function cargarPagina5(){
         `+botonComprar+`
       
       </div>
+      `+ agotado + `
       </div>
       `;
 
@@ -1113,6 +1211,9 @@ function cargarPagina5(){
          document.getElementById("cargarPagina3").className ="";
          document.getElementById("cargarPagina4").className ="";
          document.getElementById("cargarPagina5").className ="pagActiva";
+         agotado="";
+         botonAnadir = "";
+         botonComprar = "";
       k=i;
     }
     }else{
@@ -1140,13 +1241,18 @@ function cargarPagina5(){
           valoracion5 = '';
         }
 
-        if(idUser){
-          botonAnadir = "<button style='margin-left: -100px;' href='' class='card__btn btn-add-cart' data-id="+productos[1][i].cod_interno+">Añadir <i style='font-size: 10px;' class='fa fa-shopping-cart'></i></button>";
-          botonComprar = "<button onclick='verCarrito("+idUser+")' style='margin-top: -36px; margin-left: 100px;' class='card__btn btn-add-cart card__btn-solid'>Comprar <i style='font-size: 10px;' class='fa fa-credit-card-alt'></i></button>";
-        }else{
-          botonAnadir = "<button onclick='compraRegistro()' style='margin-left: -100px;' class='card__btn' data-id="+productos[1][i].cod_interno+">Añadir <i style='font-size: 10px;' class='fa fa-shopping-cart'></i></button>";
+        if ((idUser.length>0) && (productos[1][i].status_productos === 1)) {
+          botonAnadir = "<button style='margin-left: -100px;' class='card__btn btn-add-cart' data-id=" + productos[0][i].cod_interno + ">Añadir <i style='font-size: 10px;' class='fa fa-shopping-cart'></i></button>";
+          botonComprar = "<button onclick='verCarrito(" + idUser + ")' style='margin-top: -36px; margin-left: 100px;' class='card__btn btn-add-cart card__btn-solid'>Comprar <i style='font-size: 10px;' class='fa fa-credit-card-alt'></i></button>";
+        }
+        if ((!idUser) && (productos[1][i].status_productos === 1)) {
+          botonAnadir = "<button onclick='compraRegistro()' style='margin-left: -100px;' class='card__btn' data-id=" + productos[0][i].cod_interno + ">Añadir <i style='font-size: 10px;' class='fa fa-shopping-cart'></i></button>";
           botonComprar = "<button onclick='compraRegistro()' style='margin-top: -36px; margin-left: 100px;' class='card__btn card__btn-solid'>Comprar <i style='font-size: 10px;' class='fa fa-credit-card-alt'></i></button>";
         }
+        if (productos[1][i].status_productos === 0) {
+          var agotado = "<div class='texto-agotado'>AGOTADO</div>"
+        }
+
       const enviar = productos[0][i].id_producto;  
       const row = document.createElement('div');
       row.classList.add('box-card');
@@ -1177,6 +1283,7 @@ function cargarPagina5(){
         `+botonComprar+`
       
       </div>
+      `+ agotado + `
       </div>
       `;
 
@@ -1192,6 +1299,9 @@ function cargarPagina5(){
     }
       localStorage.setItem("cantPagina5",k);
       Pagina5 = localStorage.getItem("cantPagina5");
+      agotado="";
+      botonAnadir = "";
+      botonComprar = "";
   }
 }
 });
