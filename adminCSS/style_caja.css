@@ -388,15 +388,9 @@ table form{
 	height: 40px;
 	line-height: 40px;
 	box-sizing: border-box;
-	text-transform: uppercase;
 	border-bottom: 1px solid var(--border-color);
 	transition: all .2s ease-in-out;
 	font-family: 'roboto_medium_regular';
-}
-.tile:hover .tile-tittle{
-	color: #FFF;
-	border-color: var(--color-three);
-	background-color: var(--color-three);
 }
 .tile-icon{
 	width: 100%;
