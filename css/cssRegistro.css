@@ -1,0 +1,220 @@
+/*form styles*/
+#msform {
+	max-width: 600px;
+	min-height: 480px;
+	margin: 50px auto;
+	text-align: center;
+	position: relative;
+}
+
+#msform #fieldset-wrapper {
+	min-height: 500px;
+}
+
+#msform fieldset {
+	background: #FFF;
+	border: 0 none;
+	border-radius: 10px;
+	box-shadow: 0 0 15px 1px #555353;
+	padding: 40px 30px 20px;
+	box-sizing: border-box;
+	width: 80%;
+	margin: 0 10%;
+
+	/*stacking fieldsets above each other*/
+	position: relative;
+}
+
+/*Hide all except first fieldset*/
+#msform fieldset:not(:first-of-type) {
+	display: none;
+}
+
+/*inputs*/
+#msform input, #msform select,
+#msform textarea {
+	background-color: #fff;
+	display: block;
+	padding: 15px;
+	border: 1px solid #f26d43;
+	border-radius: 3px;
+	margin-bottom: 10px;
+	width: 100%;
+	height: auto;
+	box-sizing: border-box;
+	font-family: montserrat;
+	color: #000 !important;
+	font-size: 15px;
+}
+
+/*headings*/
+.step-title {
+	font-size: 18px;
+	text-transform: uppercase;
+	color: #000;
+	margin-bottom: 10px;
+}
+
+.step-subtitle {
+	font-weight: normal;
+	font-size: 15px;
+	color: #000;
+	margin-bottom: 20px;
+}
+
+/*progressbar*/
+#progressbar {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 10px;
+	margin: 0 5% 30px;
+	overflow: hidden;
+	/*CSS counters to number the steps*/
+	counter-reset: step;
+}
+
+#progressbar li {
+	list-style-type: none;
+	color: #000;
+	text-transform: uppercase;
+	font-size: 12px;
+	font-weight: 700;
+	position: relative;
+	flex: 1;
+}
+
+#progressbar li:before {
+	content: counter(step);
+	counter-increment: step;
+	width: 20px;
+	line-height: 20px;
+	display: block;
+	font-size: 15px;
+	color: #fff;
+	background: rgb(57, 57, 57);
+	border-radius: 3px;
+	margin: 0 auto 5px auto;
+	position: relative;
+	z-index: 2; /* Push the numbers over the progress line. */
+}
+
+/*progressbar connectors*/
+#progressbar li:after {
+	content: "";
+	width: 100%;
+	height: 2px;
+	background: #000;
+	position: absolute;
+	left: -50%;
+	top: 9px;
+}
+
+#progressbar li:first-child:after {
+	/*connector not needed before the first step*/
+	content: none;
+}
+
+/*marking active/completed steps green*/
+/*The number of the step and the connector before it = green*/
+#progressbar li.active:before,
+#progressbar li.active:after {
+	background: #f26d43;
+	color: white;
+}
+
+/*buttons*/
+#msform .button-wrapper {
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap-reverse;
+	margin: 0 30px 20px;
+	clear: both;
+}
+
+#msform .button-wrapper .action-button {
+	flex: auto;
+	max-width: 120px;
+	background: #f26d43;
+	font-weight: 600;
+	color: white !important;
+	border: 0 none;
+	border-radius: 1px;
+	cursor: pointer;
+	padding: 10px 5px;
+	margin: 20px 25px 0;
+	border-radius: 4px;
+}
+#msform .button-wrapper .action-button.previous {
+	background: #a1a1a1;
+	color: #000;
+}
+/* Highlighting on button hover */
+#msform .button-wrapper .action-button:hover,
+#msform .button-wrapper .action-button:focus {
+	box-shadow: 0 0 0 2px white;
+}
+
+#msform .button-wrapper .button-email {
+	flex: auto;
+	max-width: 120px;
+	background: #f26d43;
+	font-weight: 600;
+	color: white !important;
+	border: 0 none;
+	border-radius: 1px;
+	cursor: pointer;
+	padding: 10px 5px;
+	margin: 20px 25px 0;
+	border-radius: 4px;
+}
+#msform .button-wrapper .button-email:hover,
+#msform .button-wrapper .button-email:focus {
+	box-shadow: 0 0 0 2px white;
+}
+#msform .button-wrapper .button-email.previous {
+	background: #fff;
+	color: #000;
+}
+
+/* Ripple loader effect from https://loading.io/css/ */
+.lds-ripple {
+	display: inline-block;
+	position: relative;
+	width: 80px;
+	height: 80px;
+}
+.lds-ripple div {
+	position: absolute;
+	border: 4px solid #fff;
+	opacity: 1;
+	border-radius: 50%;
+	animation: lds-ripple 1s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+}
+.lds-ripple div:nth-child(2) {
+	animation-delay: -0.5s;
+}
+@keyframes lds-ripple {
+	0% {
+		top: 36px;
+		left: 36px;
+		width: 0;
+		height: 0;
+		opacity: 1;
+	}
+	100% {
+		top: 0px;
+		left: 0px;
+		width: 72px;
+		height: 72px;
+		opacity: 0;
+	}
+}
+
+#msform .ripple-loader {
+	display: block;
+	position: absolute;
+	top: 250px;
+	left: 50%;
+	margin-left: -40px;
+	box-sizing: content-box;
+}
