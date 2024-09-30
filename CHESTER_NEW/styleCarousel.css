@@ -1,0 +1,231 @@
+.divContainerCarousel{
+    width: 100% !important;
+    height: 94vh !important;
+    /* padding-top: 10px; */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.685), rgba(0, 0, 0, 0.733)), url('../../../public/productos/fondo/tools-toolbox-bw-ss-1920.jpg');
+    background-size: cover;
+    align-content: center;
+    background-attachment: fixed;
+    /* margin-top: -4%; */
+}
+.containerCarousel{
+    width: 600px;
+    max-width: 1200px !important;
+    height: auto;
+}
+.carouselPpal{
+    margin-top: 0px;
+    min-width: 500px !important;
+    max-width: 800px;
+    height: 500px !important;
+    max-height: 500px;
+    margin-right: 40px;
+    border-radius: 2% !important;
+    box-shadow: 7px 7px 15px 0px rgba(255, 255, 255, 0.418);
+
+    float: left;
+}
+.carouselPpal img{
+    /* object-fit: fill !important; */
+    border-radius: 2% !important;
+    width: 100%;
+    height: 500px;
+}
+
+
+.itemsCarousel{
+    margin-top: 12px !important;
+    align-content: center;
+}
+.itemsIndividual{
+    max-height: 200px;
+    margin-bottom: 20px;
+    border-radius: 2% !important;
+}
+.itemsIndividual img:hover{
+    box-shadow: 7px 7px 15px 0px rgba(90, 74, 2, 0.897);
+}
+.itemsCarousel img{
+    object-fit: contain;
+    /* width: 100%; */
+    height: 100%;
+    max-height: 150px;
+    border-radius: 2% !important;
+    box-shadow: 7px 7px 15px 0px rgba(255, 255, 255, 0.418);
+
+}
+
+/* IMG 1 */
+.TextCarousel{
+    top: 135px;
+}
+.textCarousel1{
+    margin-left: -150px;
+    color: #fff;
+    font-size: 3rem;
+    font-weight: 600;
+}
+.textCarousel{
+    color: black;
+    font-size: 3.2rem;
+    font-weight: 800;
+}
+.textCarousel2{
+    margin-left: 150px;
+    color: #fff;
+    font-size: 3rem;
+    font-weight: 600;
+}
+
+/* IMG 2 */
+.TextCarousel2{
+    top: 60px;
+}
+.text2Carousel1{
+    margin-left: -150px;
+    color: #fff;
+    font-size: 2.5rem;
+    font-weight: 600;
+}
+.text2Carousel{
+    color: #ffb608;
+    font-size: 3rem;
+    font-weight: 700;
+}
+.text2Carousel2{
+    margin-left: 150px;
+    color: #fff;
+    font-size: 2.5rem;
+    font-weight: 600;
+}
+
+
+/* IMG 3 */
+.TextCarousel3{
+    top: 100px;
+}
+.text3Carousel1{
+    margin-left: -250px;
+    color: #fff;
+    font-size: 2.5rem;
+    font-weight: 600;
+}
+.text3Carousel{
+    margin-left: 50px;
+    color: #ffb608;
+    font-size: 3rem;
+    font-weight: 700;
+}
+.text3Carousel2{
+    margin-left: 150px;
+    color: #fff;
+    font-size: 2.5rem;
+    font-weight: 600;
+}
+
+/* IMG 4 */
+.TextCarousel4{
+    top: 140px;
+}
+.text4Carousel1{
+    margin-left: -200px;
+    color: #fff;
+    font-size: 2.5rem;
+    font-weight: 600;
+}
+.text4Carousel{
+    margin-left: -10px;
+    color: #ffb608;
+    font-size: 3rem;
+    font-weight: 700;
+}
+.text4Carousel2{
+    margin-left: 235px;
+    color: #fff;
+    font-size: 2.5rem;
+    font-weight: 600;
+}
+
+
+/* IMG 5 */
+.TextCarousel5{
+    top: 140px;
+}
+.text5Carousel1{
+    margin-left: 0px;
+    color: #fff;
+    font-size: 2.5rem;
+    font-weight: 600;
+}
+.text5Carousel{
+    margin-left: 0px;
+    color: #000;
+    font-size: 3.2rem;
+    font-weight: 700;
+}
+.text5Carousel2{
+    margin-left: 250px;
+    color: #fff;
+    font-size: 2.5rem;
+    font-weight: 600;
+}
+
+
+@media (max-width: 1150px) {
+    .divContainerCarousel{
+        height: 750px;
+    }
+    .containerCarousel{
+        height:750px !important;
+    }
+    .carouselPpal{
+        margin: 0 auto;
+        float: none;
+    }
+
+    .itemsCarousel{
+        margin: 0 auto;
+        width: 750px !important;
+        display: flex;
+        max-height: 530px;
+    }
+    .itemsIndividual{
+        height: 150px;
+        margin-right: 10px;
+    }
+    .itemsCarousel img{
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+        max-height: 150px;
+    }
+}
+
+@media (min-width: 1400px) and (min-height:840px) {
+    .containerCarousel{
+        max-width: 1600px !important;
+        height: 755px;
+    }
+    .carouselPpal{
+        max-width: 1200px;
+        max-height: 800px;
+        margin-top: 0px;
+    }
+    .carouselPpal img{
+        height: 100%;
+    }
+    .itemsIndividual{
+        margin-bottom: 120px;
+    }
+}
+@media (max-height: 740px) {
+    .divContainerCarousel{
+        min-height: 695px;
+        margin-top: -4%;
+    }
+}             
+@media (max-width: 1150px) {
+    .divContainerCarousel{
+        margin-top: 0%;
+    }
+}      
