@@ -1,4 +1,8 @@
 .divContainerCarousel{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.685), rgba(0, 0, 0, 0.733)), url('../../../public/productos/fondo/tools-toolbox-bw-ss-1920.jpg') !important;
+}
+
+.divContainerCarousel{
     width: 100% !important;
     height: 94vh !important;
     /* padding-top: 10px; */
@@ -62,19 +66,21 @@
 .textCarousel1{
     margin-left: -150px;
     color: #fff;
-    font-size: 3rem;
-    font-weight: 600;
+    /* font-weight: 600; */
+    font-family: 'Montserrat';
+    font-size: 2.9rem;
 }
 .textCarousel{
     color: black;
     font-size: 3.2rem;
-    font-weight: 800;
+    font-weight: 700;
 }
 .textCarousel2{
     margin-left: 150px;
     color: #fff;
-    font-size: 3rem;
-    font-weight: 600;
+    font-family: 'Montserrat';
+    font-size: 2.9rem;
+    /* font-weight: 600; */
 }
 
 /* IMG 2 */
@@ -84,19 +90,22 @@
 .text2Carousel1{
     margin-left: -150px;
     color: #fff;
-    font-size: 2.5rem;
-    font-weight: 600;
+    font-family: 'Montserrat';
+    font-size: 2.9rem;
+    /* font-weight: 600; */
 }
 .text2Carousel{
     color: #ffb608;
+    font-family: 'Montserrat';
     font-size: 3rem;
     font-weight: 700;
 }
 .text2Carousel2{
     margin-left: 150px;
     color: #fff;
-    font-size: 2.5rem;
-    font-weight: 600;
+    font-family: 'Montserrat';
+    font-size: 2.8rem;
+    /* font-weight: 600; */
 }
 
 
@@ -107,20 +116,23 @@
 .text3Carousel1{
     margin-left: -250px;
     color: #fff;
+    font-family: 'Montserrat';
     font-size: 2.5rem;
-    font-weight: 600;
+    /* font-weight: 600; */
 }
 .text3Carousel{
     margin-left: 50px;
     color: #ffb608;
+    font-family: 'Montserrat';
     font-size: 3rem;
     font-weight: 700;
 }
 .text3Carousel2{
     margin-left: 150px;
     color: #fff;
-    font-size: 2.5rem;
-    font-weight: 600;
+    font-family: 'Montserrat';
+    font-size: 2.3rem;
+    /* font-weight: 600; */
 }
 
 /* IMG 4 */
@@ -130,20 +142,23 @@
 .text4Carousel1{
     margin-left: -200px;
     color: #fff;
+    font-family: 'Montserrat';
     font-size: 2.5rem;
-    font-weight: 600;
+    /* font-weight: 600; */
 }
 .text4Carousel{
     margin-left: -10px;
     color: #ffb608;
-    font-size: 3rem;
+    font-family: 'Montserrat';
+    font-size: 2.8rem;
     font-weight: 700;
 }
 .text4Carousel2{
     margin-left: 235px;
     color: #fff;
-    font-size: 2.5rem;
-    font-weight: 600;
+    font-family: 'Montserrat';
+    font-size: 2.3rem;
+    /* font-weight: 600; */
 }
 
 
@@ -154,20 +169,23 @@
 .text5Carousel1{
     margin-left: 0px;
     color: #fff;
+    font-family: 'Montserrat';
     font-size: 2.5rem;
-    font-weight: 600;
+    /* font-weight: 600; */
 }
 .text5Carousel{
     margin-left: 0px;
     color: #000;
+    font-family: 'Montserrat';
     font-size: 3.2rem;
     font-weight: 700;
 }
 .text5Carousel2{
     margin-left: 250px;
     color: #fff;
+    font-family: 'Montserrat';
     font-size: 2.5rem;
-    font-weight: 600;
+    /* font-weight: 600; */
 }
 
 
@@ -228,4 +246,4 @@
     .divContainerCarousel{
         margin-top: 0%;
     }
-}      
+} 
